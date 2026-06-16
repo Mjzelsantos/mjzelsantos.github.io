@@ -8,187 +8,213 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
---bg1:#050b1a;
---bg2:#061a2e;
---card:rgba(11,42,74,0.65);
---text:#e6f2ff;
---muted:#9fbbe3;
-
-/* ACCENTS (REALISTIC TECH MIX) */
---primary:#38bdf8;   /* cyan blue */
---secondary:#22c55e; /* green highlight */
---purple:#8b5cf6;    /* modern tech accent */
---border:rgba(56,189,248,0.25);
-}
-
+/* =======================
+   BASE
+======================= */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
 }
 
 body{
-color:var(--text);
-background:linear-gradient(135deg,var(--bg1),var(--bg2));
+background:#050b18;
+color:#e6f2ff;
+overflow-x:hidden;
 }
 
-/* NAV */
+/* =======================
+   BACKGROUND ANIMATION
+======================= */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+overflow:hidden;
+}
+
+.circle{
+position:absolute;
+width:300px;
+height:300px;
+background:rgba(56,189,248,0.15);
+border-radius:50%;
+filter:blur(80px);
+animation:float 10s infinite ease-in-out;
+}
+
+.circle:nth-child(2){
+background:rgba(139,92,246,0.12);
+top:60%;
+left:70%;
+animation-delay:2s;
+}
+
+.circle:nth-child(1){
+top:20%;
+left:10%;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+}
+
+/* =======================
+   NAV
+======================= */
 nav{
 position:fixed;
 top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:18px 10%;
-background:rgba(5,11,26,0.6);
-backdrop-filter:blur(14px);
-border-bottom:1px solid var(--border);
+background:rgba(5,11,24,0.6);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(56,189,248,0.15);
 z-index:1000;
 }
 
 nav h1{
-color:var(--primary);
+color:#38bdf8;
 font-size:18px;
-letter-spacing:1px;
 }
 
 nav a{
-color:var(--text);
-margin-left:16px;
+color:#cde7ff;
+margin-left:18px;
 text-decoration:none;
 font-size:14px;
-opacity:0.85;
+transition:0.3s;
 }
 
 nav a:hover{
-color:var(--primary);
-opacity:1;
+color:#38bdf8;
 }
 
-/* HERO */
+/* =======================
+   HERO
+======================= */
 .hero{
 height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 padding:0 10%;
-background:
-radial-gradient(circle at top right, rgba(56,189,248,0.15), transparent 40%),
-radial-gradient(circle at bottom left, rgba(139,92,246,0.12), transparent 40%);
 }
 
 .hero h2{
-color:var(--primary);
-font-size:14px;
+color:#38bdf8;
 letter-spacing:3px;
+font-size:14px;
 text-transform:uppercase;
 }
 
 .hero h1{
-font-size:62px;
+font-size:60px;
 margin:10px 0;
 }
 
 .hero p{
 max-width:850px;
-color:var(--muted);
+color:#a9c7e6;
 font-size:16px;
 line-height:1.8;
 }
 
-.highlight{
-color:var(--primary);
-font-weight:600;
-}
-
-/* BUTTON */
 .btn{
 margin-top:25px;
 padding:12px 26px;
-border:1px solid var(--primary);
-color:var(--primary);
+border:1px solid #38bdf8;
+color:#38bdf8;
 display:inline-block;
-text-decoration:none;
 border-radius:6px;
+text-decoration:none;
 transition:0.3s;
-font-size:14px;
 }
 
 .btn:hover{
-background:var(--primary);
-color:#061a2e;
-box-shadow:0 0 20px rgba(56,189,248,0.4);
+background:#38bdf8;
+color:#050b18;
 }
 
-/* SECTIONS */
+/* =======================
+   SECTIONS
+======================= */
 section{
-padding:95px 10%;
+padding:100px 10%;
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 .title{
+color:#38bdf8;
 font-size:26px;
-margin-bottom:28px;
-color:var(--primary);
+margin-bottom:25px;
 }
 
-/* CARDS (GLASS STYLE REALISTIC) */
-.card{
-background:var(--card);
-backdrop-filter:blur(10px);
-padding:20px;
-border-radius:12px;
-border:1px solid rgba(56,189,248,0.18);
-margin-bottom:15px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:var(--primary);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-
-.card h3{
-margin-bottom:8px;
-font-size:15px;
-color:#ffffff;
-}
-
-.card p{
-color:var(--muted);
-font-size:14px;
-line-height:1.7;
-}
-
-/* GRID */
+/* =======================
+   CARDS
+======================= */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:18px;
 }
 
-/* BADGE COLORS */
-.tag-green{color:var(--secondary);}
-.tag-purple{color:var(--purple);}
-.tag-blue{color:var(--primary);}
+.card{
+background:rgba(11,42,74,0.7);
+border:1px solid rgba(56,189,248,0.15);
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
 
-/* FOOTER */
+.card:hover{
+transform:translateY(-6px);
+border-color:#38bdf8;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card h3{
+color:#ffffff;
+margin-bottom:8px;
+}
+
+.card p{
+color:#a9c7e6;
+font-size:14px;
+line-height:1.7;
+}
+
+/* =======================
+   FOOTER
+======================= */
 footer{
 text-align:center;
-padding:25px;
-color:var(--muted);
+padding:30px;
+color:#7aa6c7;
 border-top:1px solid rgba(56,189,248,0.15);
-margin-top:40px;
-font-size:13px;
 }
 </style>
 </head>
 
 <body>
+
+<!-- BACKGROUND -->
+<div class="bg">
+<div class="circle"></div>
+<div class="circle"></div>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -204,68 +230,64 @@ font-size:13px;
 <!-- HERO -->
 <section class="hero">
 <h2>IT INFRASTRUCTURE ENGINEER</h2>
-
 <h1>Mark John Santos</h1>
 
 <p>
-IT Infrastructure Engineer specializing in <span class="highlight">enterprise network systems</span>,
-server administration, and full IT infrastructure deployment including office branches, CCTV systems,
-biometrics, and VoIP integration.
+I design and manage enterprise IT infrastructure including networks, servers,
+system administration, and office technology integration such as CCTV, biometrics, and VoIP systems.
 </p>
 
-<a class="btn" href="#experience">Explore Profile</a>
+<a class="btn" href="#experience">View Experience</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
 <h2 class="title">Professional Summary</h2>
-
 <div class="card">
-Experienced IT Infrastructure Engineer with strong background in IT Helpdesk support and enterprise system engineering.
-Skilled in designing, deploying, and maintaining IT environments including network infrastructure, servers,
-and integrated office technologies across multiple business operations.
+Experienced IT Infrastructure Engineer specializing in end-to-end IT systems deployment,
+network engineering, and enterprise infrastructure management across business environments.
 </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2 class="title">Technical Expertise</h2>
+<h2 class="title">Technical Skills</h2>
 
 <div class="grid">
 
 <div class="card">
 <h3>IT Support</h3>
-<p>Helpdesk, troubleshooting, hardware/software, devices</p>
+<p>Helpdesk, troubleshooting, devices, printers</p>
 </div>
 
 <div class="card">
 <h3>System Administration</h3>
-<p>Windows Server, Active Directory, user management</p>
+<p>Windows Server, Active Directory</p>
 </div>
 
 <div class="card">
-<h3>Database Administration</h3>
-<p>Database setup, backup, recovery, maintenance</p>
+<h3>Database</h3>
+<p>Setup, backup, maintenance</p>
 </div>
 
 <div class="card">
-<h3>Network Engineering</h3>
-<p>LAN/WAN, MikroTik, routing, switching, branch setup</p>
+<h3>Networking</h3>
+<p>LAN/WAN, MikroTik, routing</p>
 </div>
 
 <div class="card">
 <h3>Security</h3>
-<p>Fortinet firewall, VPN, security policies</p>
+<p>Firewall, VPN, Fortinet</p>
 </div>
 
 <div class="card">
 <h3>Infrastructure</h3>
-<p>Enterprise deployment, office setup, server systems</p>
+<p>Server setup, branch connectivity</p>
 </div>
 
 <div class="card">
 <h3>Systems Integration</h3>
-<p>CCTV, biometrics, VoIP, office devices</p>
+<p>CCTV, biometrics, VoIP</p>
 </div>
 
 </div>
@@ -277,17 +299,17 @@ and integrated office technologies across multiple business operations.
 
 <div class="card">
 <h3>IT Helpdesk Engineer</h3>
-<p>Provided technical support for users including troubleshooting systems, hardware, software, and network issues.</p>
+<p>Provided technical support and troubleshooting for users and systems.</p>
 </div>
 
 <div class="card">
 <h3>IT Infrastructure Engineer</h3>
-<p>Designed and implemented enterprise IT infrastructure including servers, networks, and branch connectivity systems.</p>
+<p>Designed and deployed enterprise IT infrastructure and network systems.</p>
 </div>
 
 <div class="card">
 <h3>Enterprise Systems Integration</h3>
-<p>Implemented CCTV, biometric systems, VoIP telephony, and office IT solutions.</p>
+<p>Implemented CCTV, biometrics, and VoIP solutions.</p>
 </div>
 
 </section>
@@ -295,7 +317,6 @@ and integrated office technologies across multiple business operations.
 <!-- CONTACT -->
 <section id="contact">
 <h2 class="title">Contact</h2>
-
 <div class="card">
 Email: your-email@example.com <br>
 LinkedIn: your profile
@@ -305,6 +326,21 @@ LinkedIn: your profile
 <footer>
 © 2026 Mark John Santos | IT Infrastructure Engineer
 </footer>
+
+<script>
+// scroll animation
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+},{threshold:0.15});
+
+sections.forEach(sec=>observer.observe(sec));
+</script>
 
 </body>
 </html>
