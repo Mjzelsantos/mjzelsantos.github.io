@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mark John Santos | IT Infrastructure Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -17,9 +17,8 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#061a2e;
-color:#dbeafe;
-line-height:1.6;
+background:#050f1f;
+color:#e5f2ff;
 }
 
 /* NAV */
@@ -31,10 +30,10 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 10%;
-background:rgba(6,26,46,0.92);
-backdrop-filter:blur(12px);
+background:rgba(5,15,31,0.8);
+backdrop-filter:blur(15px);
 z-index:1000;
-border-bottom:1px solid rgba(56,189,248,0.15);
+border-bottom:1px solid rgba(56,189,248,0.2);
 }
 
 nav h1{
@@ -44,7 +43,7 @@ letter-spacing:1px;
 }
 
 nav a{
-color:#dbeafe;
+color:#cde7ff;
 margin-left:18px;
 text-decoration:none;
 font-size:14px;
@@ -61,31 +60,38 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 padding:0 10%;
+background:radial-gradient(circle at top right, rgba(56,189,248,0.15), transparent 40%);
 }
 
 .hero h2{
 color:#38bdf8;
-font-size:16px;
-letter-spacing:2px;
+font-size:14px;
+letter-spacing:3px;
 text-transform:uppercase;
 }
 
 .hero h1{
-font-size:58px;
+font-size:62px;
 margin:10px 0;
 color:#ffffff;
 }
 
 .hero p{
 max-width:850px;
-color:#93c5fd;
+color:#a9c7e6;
 font-size:17px;
-margin-top:10px;
+line-height:1.8;
 }
 
+.highlight{
+color:#38bdf8;
+font-weight:600;
+}
+
+/* BUTTON */
 .btn{
 margin-top:25px;
-padding:12px 25px;
+padding:12px 26px;
 border:1px solid #38bdf8;
 color:#38bdf8;
 display:inline-block;
@@ -97,26 +103,28 @@ font-size:14px;
 
 .btn:hover{
 background:#38bdf8;
-color:#061a2e;
+color:#050f1f;
 }
 
 /* SECTIONS */
 section{
-padding:90px 10%;
+padding:100px 10%;
 }
 
-.title{
+.section-title{
+font-size:28px;
 color:#38bdf8;
-font-size:26px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
-/* ABOUT */
-.about p{
-max-width:950px;
-color:#cbd5e1;
-font-size:15px;
+/* ABOUT BOX */
+.about-box{
+background:rgba(11,42,74,0.6);
+padding:25px;
+border-radius:12px;
+border:1px solid rgba(56,189,248,0.2);
 line-height:1.9;
+color:#cde7ff;
 }
 
 /* SKILLS GRID */
@@ -126,72 +134,67 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:18px;
 }
 
-/* SKILL CARD */
-.skill-card{
-background:#0b2a4a;
-padding:22px;
-border-radius:10px;
-border:1px solid rgba(29,78,216,0.6);
-transition:0.3s;
-}
-
-.skill-card:hover{
-transform:translateY(-6px);
-border-color:#38bdf8;
-}
-
-.skill-card h3{
-color:#38bdf8;
-margin-bottom:12px;
-font-size:15px;
-}
-
-.skill-card ul{
-list-style:none;
-color:#93c5fd;
-font-size:14px;
-line-height:1.8;
-}
-
-/* EXPERIENCE */
+/* CARD */
 .card{
 background:#0b2a4a;
-padding:22px;
-border-radius:10px;
-margin-bottom:16px;
-border:1px solid rgba(29,78,216,0.6);
+padding:20px;
+border-radius:12px;
+border:1px solid rgba(56,189,248,0.15);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
 border-color:#38bdf8;
 }
 
 .card h3{
 color:#ffffff;
-margin-bottom:8px;
-font-size:16px;
+margin-bottom:10px;
+font-size:15px;
 }
 
-.card p{
-color:#93c5fd;
+.card ul{
+list-style:none;
+color:#a9c7e6;
+font-size:13px;
+line-height:1.8;
+}
+
+/* EXPERIENCE */
+.exp{
+background:#0b2a4a;
+padding:20px;
+border-radius:12px;
+margin-bottom:15px;
+border:1px solid rgba(56,189,248,0.15);
+}
+
+.exp h3{
+color:#38bdf8;
+font-size:16px;
+margin-bottom:8px;
+}
+
+.exp p{
+color:#a9c7e6;
 font-size:14px;
+line-height:1.7;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
 padding:25px;
-color:#93c5fd;
-font-size:13px;
+color:#7aa6c7;
 border-top:1px solid rgba(56,189,248,0.15);
 margin-top:40px;
+font-size:13px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:36px;}
+.hero h1{font-size:38px;}
 nav{flex-direction:column;gap:10px;}
 }
 </style>
@@ -213,99 +216,100 @@ nav{flex-direction:column;gap:10px;}
 
 <!-- HERO -->
 <section class="hero">
-<h2>IT Infrastructure Engineer</h2>
+<h2>IT INFRASTRUCTURE ENGINEER</h2>
+
 <h1>Mark John Santos</h1>
 
 <p>
-IT Infrastructure Engineer specializing in IT Helpdesk support, network engineering,
-system administration, and enterprise IT infrastructure deployment including office branch connectivity,
-servers, and integrated business systems.
+I design, deploy, and manage complete <span class="highlight">enterprise IT infrastructure</span>
+including networks, servers, systems, and office technology environments across business branches.
 </p>
 
-<a class="btn" href="#experience">View Experience</a>
+<a class="btn" href="#experience">Explore My Work</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<h2 class="title">Professional Profile</h2>
-<p>
-Experienced IT Infrastructure Engineer with strong foundation in IT Helpdesk support and progressive experience
-in designing and implementing enterprise IT environments. Skilled in managing end-to-end infrastructure including
-network systems, servers, database support, and office technology integration such as CCTV, biometric systems,
-and VoIP solutions.
-</p>
+<h2 class="section-title">Professional Summary</h2>
+
+<div class="about-box">
+Experienced IT Infrastructure Engineer with strong background in IT Helpdesk support and enterprise system deployment.
+Skilled in building complete IT environments from scratch including network infrastructure, server systems, and office technology integration.
+
+Hands-on experience in supporting business operations through CCTV systems, biometric access control, VoIP telephony,
+printer/network device management, and multi-site office connectivity.
+</div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2 class="title">Technical Expertise</h2>
+<h2 class="section-title">Technical Expertise</h2>
 
 <div class="skills-grid">
 
-<div class="skill-card">
-<h3>IT Support & Service Desk</h3>
+<div class="card">
+<h3>IT Support</h3>
 <ul>
 <li>IT Helpdesk & End-User Support</li>
 <li>Hardware & Software Troubleshooting</li>
-<li>Printer & Device Management</li>
+<li>Device & Printer Management</li>
 <li>Incident Resolution</li>
 </ul>
 </div>
 
-<div class="skill-card">
+<div class="card">
 <h3>System Administration</h3>
 <ul>
 <li>Windows Server Administration</li>
-<li>Active Directory / Domain Services</li>
-<li>User & Access Management</li>
+<li>Active Directory & Domain Services</li>
+<li>User Access Management</li>
 <li>System Deployment & Maintenance</li>
 </ul>
 </div>
 
-<div class="skill-card">
+<div class="card">
 <h3>Database Administration</h3>
 <ul>
-<li>Database Installation & Maintenance</li>
+<li>Database Setup & Configuration</li>
 <li>Backup & Recovery Management</li>
-<li>Performance Monitoring</li>
+<li>Monitoring & Maintenance</li>
 </ul>
 </div>
 
-<div class="skill-card">
+<div class="card">
 <h3>Network Engineering</h3>
 <ul>
-<li>LAN/WAN Design & Implementation</li>
+<li>LAN / WAN Design</li>
 <li>Router & Switch Configuration</li>
 <li>MikroTik Administration</li>
-<li>Branch Connectivity Setup</li>
+<li>Branch Connectivity</li>
 </ul>
 </div>
 
-<div class="skill-card">
+<div class="card">
 <h3>Network Security</h3>
 <ul>
-<li>Firewall Management (Fortinet)</li>
+<li>Fortinet Firewall Management</li>
 <li>VPN Configuration</li>
-<li>Network Security Policies</li>
+<li>Security Policies</li>
 </ul>
 </div>
 
-<div class="skill-card">
+<div class="card">
 <h3>Infrastructure & Systems</h3>
 <ul>
 <li>IT Infrastructure Deployment</li>
 <li>Office Branch Setup</li>
-<li>Server Room Configuration</li>
-<li>Enterprise IT Systems</li>
+<li>Server Room Infrastructure</li>
 </ul>
 </div>
 
-<div class="skill-card">
-<h3>Office Systems Integration</h3>
+<div class="card">
+<h3>Office Systems</h3>
 <ul>
 <li>CCTV Surveillance Systems</li>
-<li>Biometric Access Systems</li>
-<li>VoIP / IP Telephony</li>
+<li>Biometric Access Control</li>
+<li>VoIP / Telephone Systems</li>
 <li>Office Device Integration</li>
 </ul>
 </div>
@@ -315,35 +319,34 @@ and VoIP solutions.
 
 <!-- EXPERIENCE -->
 <section id="experience">
-<h2 class="title">Experience</h2>
+<h2 class="section-title">Experience</h2>
 
-<div class="card">
+<div class="exp">
 <h3>IT Helpdesk Engineer</h3>
-<p>Provided end-user support, troubleshooting systems, hardware, software, printers, and network issues.</p>
+<p>Provided technical support for users, including troubleshooting systems, hardware, software, printers, and network issues.</p>
 </div>
 
-<div class="card">
+<div class="exp">
 <h3>IT Infrastructure Engineer</h3>
-<p>Designed and deployed IT infrastructure including servers, networks, and enterprise systems across office environments.</p>
+<p>Designed and implemented enterprise IT infrastructure including servers, networks, and branch connectivity systems.</p>
 </div>
 
-<div class="card">
+<div class="exp">
 <h3>Enterprise Systems Integration</h3>
-<p>Implemented CCTV, biometric systems, VoIP, and integrated office IT solutions for business operations.</p>
-</div>
-
-<div class="card">
-<h3>Network Administration</h3>
-<p>Managed network infrastructure including routers, switches, firewall systems, and branch connectivity.</p>
+<p>Implemented CCTV, biometric systems, VoIP telephony, and integrated office IT environments.</p>
 </div>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<h2 class="title">Contact</h2>
-<p>Email: your-email@example.com</p>
-<p>LinkedIn: your LinkedIn profile</p>
+<h2 class="section-title">Contact</h2>
+
+<div class="about-box">
+Email: your-email@example.com <br>
+LinkedIn: your LinkedIn profile
+</div>
+
 </section>
 
 <footer>
