@@ -22,6 +22,7 @@ color:#dbeafe;
 line-height:1.6;
 }
 
+/* NAV */
 nav{
 position:fixed;
 top:0;
@@ -50,6 +51,7 @@ font-size:14px;
 
 nav a:hover{color:#38bdf8;}
 
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -75,8 +77,10 @@ color:#93c5fd;
 max-width:900px;
 }
 
+/* SECTIONS */
 section{
 padding:90px 10%;
+border-bottom:1px solid rgba(56,189,248,0.08);
 }
 
 .title{
@@ -85,45 +89,69 @@ font-size:26px;
 margin-bottom:20px;
 }
 
+/* CARDS */
 .card, .skill-card{
 background:#0b2a4a;
 padding:18px;
 border-radius:10px;
 margin-bottom:12px;
 border:1px solid rgba(56,189,248,0.2);
+transition:0.3s;
 }
 
+.card:hover, .skill-card:hover{
+transform:translateY(-5px);
+border-color:#38bdf8;
+}
+
+/* GRID */
 .skill-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:15px;
 }
 
+/* TEXT */
 ul{
 margin-left:18px;
 color:#cbd5e1;
 font-size:14px;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
-border-top:1px solid rgba(56,189,248,0.2);
 color:#93c5fd;
 }
 
+/* BUTTON */
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:10px 18px;
+background:#38bdf8;
+color:#061a2e;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
 <h1>Mark J.</h1>
 <div>
 <a href="#about">About</a>
+<a href="#education">Education</a>
 <a href="#skills">Skills</a>
 <a href="#training">Training</a>
+<a href="#certifications">Certifications</a>
 <a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
@@ -136,6 +164,8 @@ IT Infrastructure Engineer specializing in enterprise IT systems, network infras
 server administration, cybersecurity, and business IT solutions including PBX, CCTV,
 biometrics, and enterprise connectivity systems.
 </p>
+
+<a class="btn" href="#">Download CV</a>
 </section>
 
 <!-- ABOUT -->
@@ -148,7 +178,7 @@ Strong background in IT support, infrastructure deployment, and enterprise opera
 </p>
 </section>
 
-<!-- EDUCATIONAL ATTAINMENT -->
+<!-- EDUCATION -->
 <section id="education">
 <h2 class="title">Educational Attainment</h2>
 
@@ -161,7 +191,6 @@ Tuguegarao City, Philippines<br>
 </p>
 </div>
 </section>
-  
 
 <!-- SKILLS -->
 <section id="skills">
@@ -181,9 +210,9 @@ Tuguegarao City, Philippines<br>
 <div class="skill-card">
 <h3>Network Infrastructure Management</h3>
 <ul>
-<li>Fortinet Firewalls & Security Policies</li>
-<li>Ruijie Routers & Layer 2/3 Switching</li>
-<li>VLAN, VPN, SD-WAN, Dual ISP Failover</li>
+<li>Fortinet Firewalls</li>
+<li>Ruijie Routers & Switching</li>
+<li>VLAN, VPN, SD-WAN</li>
 </ul>
 </div>
 
@@ -191,26 +220,7 @@ Tuguegarao City, Philippines<br>
 <h3>System Backup & DR</h3>
 <ul>
 <li>Backup & Recovery Systems</li>
-<li>Secondary Server Management</li>
 <li>Disaster Recovery Planning</li>
-</ul>
-</div>
-
-<div class="skill-card">
-<h3>Email & Communication Systems</h3>
-<ul>
-<li>cPanel / Exabytes Email Management</li>
-<li>Email Migration & Archiving</li>
-<li>Microsoft Outlook Support</li>
-</ul>
-</div>
-
-<div class="skill-card">
-<h3>Database & Applications</h3>
-<ul>
-<li>FinPower Connect Support</li>
-<li>System Deployment & Maintenance</li>
-<li>Data Integrity & Access Control</li>
 </ul>
 </div>
 
@@ -219,16 +229,6 @@ Tuguegarao City, Philippines<br>
 <ul>
 <li>Kaspersky Endpoint Security</li>
 <li>MFA & VPN Security</li>
-<li>Role-Based Access Control</li>
-</ul>
-</div>
-
-<div class="skill-card">
-<h3>IT Helpdesk</h3>
-<ul>
-<li>PC Setup & Software Installation</li>
-<li>User Onboarding</li>
-<li>Printer & Device Support</li>
 </ul>
 </div>
 
@@ -237,21 +237,21 @@ Tuguegarao City, Philippines<br>
 
 <!-- TRAINING -->
 <section id="training">
-<h2 class="title">Professional Trainings & Certification Exam</h2>
+<h2 class="title">Professional Trainings</h2>
 
 <div class="card">
 <ul>
 <li>CompTIA Security+ - 2025</li>
-<li>Microsoft Windows Server 2019 Administrator Automation using PowerShell - 2023</li>
-<li>Microsoft Windows Server 2019 Administrator - 2022</li>
+<li>Windows Server 2019 Administrator - 2022</li>
 <li>Cisco CCNA Routing - 2020</li>
 <li>CompTIA A+ - 2019</li>
 </ul>
 </div>
 </section>
 
-<section id="training">
-<h2 class="title">Certification Exam</h2>
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+<h2 class="title">Certification Exams</h2>
 
 <div class="card">
 <ul>
@@ -262,16 +262,6 @@ Tuguegarao City, Philippines<br>
 </ul>
 </div>
 </section>
-
-
-
-
-
-
-
-
-
-  
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -289,29 +279,31 @@ Tuguegarao City, Philippines<br>
 
 <div class="card">
 <h3>IT Freelancer</h3>
-<p> 2020 – March 2022</p>
-</div>
-
-<div class="card">
-<h3>CCNA Exam Preparation</h3>
-<p>October 2019 – January 2020</p>
+<p>2020 – March 2022</p>
 </div>
 
 <div class="card">
 <h3>IT Specialist / QGIS - LGU Camalaniugan</h3>
-<p>August 2017 – October 2019</p>
+<p>2017 – 2019</p>
 </div>
 
 <div class="card">
-<h3>IT Support / Customer Service - 2GO Express</h3>
-<p>January 2017 – July 2017</p>
+<h3>IT Support - 2GO Express</h3>
+<p>2017</p>
 </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact</h2>
 
 <div class="card">
-<h3>IT Technician - R&J Enterprises</h3>
-<p>June 2016 – January 2017</p>
+<p>Email: yourname@email.com</p>
+<p>Phone: +63 XXX XXX XXXX</p>
+<p>Location: Philippines / Papua New Guinea</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
 </div>
-
 </section>
 
 <footer>
