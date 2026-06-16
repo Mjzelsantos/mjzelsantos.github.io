@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mark John Santos | Portfolio</title>
+<title>Mark John Santos | IT Systems Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -17,11 +17,11 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#071a2f; /* NAVY BLUE THEME */
+background:#061a2e;
 color:#dbeafe;
 }
 
-/* NAVBAR */
+/* NAV */
 nav{
 position:fixed;
 top:0;
@@ -30,7 +30,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 10%;
-background:rgba(7,26,47,0.9);
+background:rgba(6,26,46,0.9);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -65,15 +65,15 @@ font-size:18px;
 }
 
 .hero h1{
-font-size:65px;
+font-size:55px;
 margin:10px 0;
-color:white;
 }
 
 .hero p{
-max-width:600px;
+max-width:800px;
 color:#93c5fd;
 font-size:18px;
+line-height:1.6;
 }
 
 .btn{
@@ -82,7 +82,6 @@ padding:12px 25px;
 border:1px solid #38bdf8;
 color:#38bdf8;
 display:inline-block;
-width:max-content;
 text-decoration:none;
 border-radius:5px;
 transition:0.3s;
@@ -90,7 +89,7 @@ transition:0.3s;
 
 .btn:hover{
 background:#38bdf8;
-color:#071a2f;
+color:#061a2e;
 }
 
 /* SECTIONS */
@@ -107,7 +106,7 @@ margin-bottom:25px;
 /* ABOUT */
 .about p{
 max-width:900px;
-line-height:1.7;
+line-height:1.8;
 color:#cbd5e1;
 }
 
@@ -122,18 +121,18 @@ gap:10px;
 background:#0b2a4a;
 padding:10px 15px;
 border-radius:6px;
-color:#93c5fd;
 border:1px solid #1d4ed8;
+color:#93c5fd;
 }
 
-/* PROJECTS */
+/* EXPERIENCE */
 .card{
 background:#0b2a4a;
 padding:20px;
 border-radius:10px;
 margin-bottom:15px;
-transition:0.3s;
 border:1px solid #1d4ed8;
+transition:0.3s;
 }
 
 .card:hover{
@@ -147,9 +146,8 @@ padding:20px;
 color:#93c5fd;
 }
 
-/* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:40px;}
+.hero h1{font-size:32px;}
 nav{flex-direction:column;}
 }
 </style>
@@ -163,60 +161,105 @@ nav{flex-direction:column;}
 <div>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+<a href="#certs">Certifications</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<h2>Hi, my name is</h2>
+<h2>System • Network • Database Administrator</h2>
+
 <h1>Mark John Santos</h1>
+
 <p>
-Technology professional focused on partnerships, ecosystem growth,
-and AI-driven innovation in modern enterprise platforms.
+Experienced IT Infrastructure professional specializing in system administration,
+network engineering, database setup, and enterprise branch connectivity.
+I design and deploy IT infrastructure from scratch including domain servers,
+networks, and secure enterprise environments.
 </p>
 
-<a class="btn" href="#projects">View My Work</a>
+<a class="btn" href="#experience">View Experience</a>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <h2 class="title">About Me</h2>
 <div class="about">
 <p>
-I am Mark John Santos, working in technology partnerships and ecosystem development.
-I focus on building strategic collaborations, driving platform growth,
-and supporting AI and cloud transformation initiatives in enterprise environments.
+I am an IT Systems Administrator with hands-on experience in designing and deploying complete IT infrastructures.
+I have built office branch connectivity from scratch, configured domain servers,
+implemented database systems, and managed secure network environments for enterprise operations including overseas setups.
 </p>
 </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills">
-<h2 class="title">Skills</h2>
+<h2 class="title">Technical Skills</h2>
+
 <div class="skills">
-<div class="skill">Technology Partnerships</div>
-<div class="skill">Ecosystem Growth</div>
-<div class="skill">Strategic Alliances</div>
-<div class="skill">Generative AI</div>
-<div class="skill">Cloud (AWS)</div>
-<div class="skill">Business Development</div>
+<div class="skill">System Administration</div>
+<div class="skill">Network Engineering</div>
+<div class="skill">Database Administration</div>
+<div class="skill">Active Directory / Domain Setup</div>
+<div class="skill">Office Branch Connectivity</div>
+<div class="skill">Firewall Configuration (Fortinet)</div>
+<div class="skill">MikroTik Networking</div>
+<div class="skill">Server Deployment</div>
+<div class="skill">IT Infrastructure Design</div>
 </div>
 </section>
 
-<section id="projects">
-<h2 class="title">Projects</h2>
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 class="title">Experience</h2>
 
 <div class="card">
-<h3>Enterprise Collaboration</h3>
-<p>Driving partner ecosystem initiatives and strategic technology alliances.</p>
+<h3>IT Infrastructure Deployment</h3>
+<p>
+Designed and implemented full IT infrastructure from scratch including office networks,
+servers, domain controllers, and inter-branch connectivity systems.
+</p>
 </div>
 
 <div class="card">
-<h3>AI & Cloud Learning</h3>
-<p>Working on Generative AI and cloud-based transformation knowledge.</p>
+<h3>Network & Security Administration</h3>
+<p>
+Managed enterprise network environments including firewall configuration, VPN setups,
+and secure connectivity using Fortinet and MikroTik systems.
+</p>
+</div>
+
+<div class="card">
+<h3>Database & Server Administration</h3>
+<p>
+Handled database setup, maintenance, and server management ensuring system stability,
+performance optimization, and secure access control.
+</p>
 </div>
 
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certs">
+<h2 class="title">Certifications & Exams</h2>
+
+<div class="card">
+<p>
+• Fortinet NSE 1 & NSE 2 Certified<br>
+• MikroTik MTCNA Certified<br>
+• MikroTik RCNA Certified<br>
+• Ruijie Network Certification<br>
+• CompTIA Security+ (Training Completed)<br>
+• Currently preparing for next certification exams (Next Year)
+</p>
+</div>
+
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
 <h2 class="title">Contact</h2>
 <p>Email: your-email@example.com</p>
@@ -224,7 +267,7 @@ and supporting AI and cloud transformation initiatives in enterprise environment
 </section>
 
 <footer>
-© 2026 Mark John Santos
+© 2026 Mark John Santos | IT Systems Engineer
 </footer>
 
 </body>
