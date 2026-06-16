@@ -24,13 +24,13 @@ color:#ccd6f6;
 /* NAV */
 nav{
 position:fixed;
-width:100%;
 top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 10%;
-background:rgba(10,25,47,0.9);
+background:rgba(10,25,47,0.85);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
@@ -61,16 +61,18 @@ padding:0 10%;
 
 .hero h2{
 color:#64ffda;
+font-size:18px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:65px;
 margin:10px 0;
 }
 
 .hero p{
-max-width:500px;
+max-width:550px;
 color:#8892b0;
+font-size:18px;
 }
 
 .btn{
@@ -81,6 +83,12 @@ color:#64ffda;
 display:inline-block;
 width:max-content;
 text-decoration:none;
+border-radius:5px;
+}
+
+.btn:hover{
+background:#64ffda;
+color:#0a192f;
 }
 
 /* SECTIONS */
@@ -90,8 +98,8 @@ padding:100px 10%;
 
 .title{
 color:#64ffda;
-margin-bottom:20px;
 font-size:28px;
+margin-bottom:25px;
 }
 
 /* SKILLS */
@@ -109,11 +117,22 @@ color:#64ffda;
 }
 
 /* PROJECTS */
-.card{
+.project{
 background:#112240;
 padding:20px;
-margin-bottom:15px;
 border-radius:10px;
+margin-bottom:15px;
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-5px);
+}
+
+/* CONTACT */
+.contact p{
+margin:10px 0;
+color:#8892b0;
 }
 
 /* FOOTER */
@@ -125,8 +144,7 @@ color:#8892b0;
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:35px;}
-nav{flex-direction:column;}
+.hero h1{font-size:40px;}
 }
 </style>
 
@@ -147,41 +165,41 @@ nav{flex-direction:column;}
 <section class="hero">
 <h2>Hi, my name is</h2>
 <h1>Mark John Santos</h1>
-<p>I am a beginner developer building modern websites and improving my coding skills.</p>
+<p>I build modern websites and I am constantly improving my development skills.</p>
 <a class="btn" href="#projects">View Projects</a>
 </section>
 
 <section id="about">
 <h2 class="title">About Me</h2>
 <p>
-Hi! I'm Mark John Santos. I love technology, coding, and building websites.
-This portfolio is my personal space where I will showcase my progress and projects.
+I am Mark John Santos, a beginner developer passionate about web development,
+technology, and building clean modern websites. I enjoy learning new tools and improving my skills every day.
 </p>
 </section>
 
 <section id="skills">
 <h2 class="title">Skills</h2>
 <div class="skills">
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Edit Later</div>
-<div class="skill">Edit Later</div>
-<div class="skill">Edit Later</div>
+<div>HTML</div>
+<div>CSS</div>
+<div>JavaScript</div>
+<div>Edit Later</div>
+<div>Edit Later</div>
+<div>Edit Later</div>
 </div>
 </section>
 
 <section id="projects">
 <h2 class="title">Projects</h2>
 
-<div class="card">
+<div class="project">
 <h3>Project 1</h3>
-<p>Describe your project here later.</p>
+<p>Add your project description later.</p>
 </div>
 
-<div class="card">
+<div class="project">
 <h3>Project 2</h3>
-<p>Describe your project here later.</p>
+<p>Add your project description later.</p>
 </div>
 
 </section>
@@ -189,7 +207,7 @@ This portfolio is my personal space where I will showcase my progress and projec
 <section id="contact">
 <h2 class="title">Contact</h2>
 <p>Email: your@email.com</p>
-<p>GitHub: github.com/mjzelsantos</p>
+<p>GitHub: github.com/yourusername</p>
 </section>
 
 <footer>
