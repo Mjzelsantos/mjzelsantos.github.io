@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark John Santos | Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    line-height:1.6;
+}
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    padding:20px;
+}
+
+.profile{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:1.3rem;
+    color:#94a3b8;
+}
+
+.btn{
+    margin-top:25px;
+    padding:12px 28px;
+    background:#38bdf8;
+    color:#000;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:#38bdf8;
+    font-size:2.3rem;
+    margin-bottom:40px;
+}
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    color:#cbd5e1;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:12px 20px;
+    border-radius:25px;
+    transition:.3s;
+}
+
+.skill:hover{
+    background:#38bdf8;
+    color:black;
+}
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#38bdf8;
+    margin-bottom:10px;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <div class="logo">MJS</div>
+
+```
+<ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+```
+
+</nav>
+
+<section class="hero">
+
+```
+<img class="profile"
+src="https://via.placeholder.com/300"
+alt="Mark John Santos">
+
+<h1>Mark John Santos</h1>
+
+<p>
+    Developer • Technology Enthusiast • Continuous Learner
+</p>
+
+<a href="#about" class="btn">Explore My Portfolio</a>
+```
+
+</section>
+
+<section id="about">
+
+```
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+    <p>
+        Hello! I'm Mark John Santos. I am passionate about technology,
+        software development, problem-solving, and continuous learning.
+        I enjoy building digital solutions, exploring emerging technologies,
+        and creating projects that make a positive impact.
+    </p>
+</div>
+```
+
+</section>
+
+<section id="skills">
+
+```
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+    <div class="skill">Edit Later</div>
+    <div class="skill">Edit Later</div>
+    <div class="skill">Edit Later</div>
+    <div class="skill">Edit Later</div>
+    <div class="skill">Edit Later</div>
+    <div class="skill">Edit Later</div>
+
+</div>
+```
+
+</section>
+
+<section id="projects">
+
+```
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+    <div class="card">
+        <h3>Project 1</h3>
+        <p>Add your project description here.</p>
+    </div>
+
+    <div class="card">
+        <h3>Project 2</h3>
+        <p>Add your project description here.</p>
+    </div>
+
+    <div class="card">
+        <h3>Project 3</h3>
+        <p>Add your project description here.</p>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="contact">
+
+```
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+    <p>Email: your-email@example.com</p>
+    <p>Location: Philippines</p>
+    <p>GitHub: github.com/mjzelsantos</p>
+</div>
+```
+
+</section>
+
+<footer>
+    © 2026 Mark John Santos. All Rights Reserved.
+</footer>
+
+</body>
+</html>
