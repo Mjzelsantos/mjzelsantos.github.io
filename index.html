@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,67 +20,53 @@ scroll-behavior:smooth;
 body{
 background:#061a2e;
 color:#dbeafe;
-line-height:1.6;
-}
-
-/* NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
 display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 10%;
-background:rgba(6,26,46,0.92);
-backdrop-filter:blur(12px);
-z-index:1000;
-border-bottom:1px solid rgba(56,189,248,0.15);
 }
 
-nav h1{
+/* SIDEBAR */
+.sidebar{
+width:300px;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+background:#0b2a4a;
+padding:30px 20px;
+border-right:1px solid rgba(56,189,248,0.2);
+}
+
+.sidebar h1{
 color:#38bdf8;
-font-size:18px;
+font-size:20px;
+margin-bottom:10px;
 }
 
-nav a{
+.sidebar p{
+font-size:13px;
+color:#93c5fd;
+margin-bottom:20px;
+}
+
+.sidebar a{
+display:block;
 color:#dbeafe;
-margin-left:18px;
 text-decoration:none;
+margin:12px 0;
 font-size:14px;
 }
 
-nav a:hover{color:#38bdf8;}
-
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:0 10%;
-}
-
-.hero h2{
+.sidebar a:hover{
 color:#38bdf8;
-font-size:16px;
-letter-spacing:2px;
 }
 
-.hero h1{
-font-size:52px;
-color:#fff;
-margin:10px 0;
+/* MAIN CONTENT */
+.main{
+margin-left:300px;
+width:calc(100% - 300px);
 }
 
-.hero p{
-color:#93c5fd;
-max-width:900px;
-}
-
-/* SECTIONS */
 section{
-padding:90px 10%;
+padding:70px 10%;
 border-bottom:1px solid rgba(56,189,248,0.08);
 }
 
@@ -89,74 +76,96 @@ font-size:26px;
 margin-bottom:20px;
 }
 
-/* CARDS */
-.card, .skill-card{
+.card{
 background:#0b2a4a;
 padding:18px;
 border-radius:10px;
 margin-bottom:12px;
 border:1px solid rgba(56,189,248,0.2);
-transition:0.3s;
 }
 
-.card:hover, .skill-card:hover{
-transform:translateY(-5px);
-border-color:#38bdf8;
-}
-
-/* GRID */
 .skill-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
 }
 
-/* TEXT */
+.skill-card{
+background:#0b2a4a;
+padding:18px;
+border-radius:10px;
+border:1px solid rgba(56,189,248,0.2);
+}
+
 ul{
 margin-left:18px;
 color:#cbd5e1;
 font-size:14px;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-color:#93c5fd;
+/* HERO */
+.hero{
+padding:120px 10%;
 }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:10px 18px;
-background:#38bdf8;
-color:#061a2e;
-text-decoration:none;
-border-radius:6px;
-font-weight:600;
+.hero h2{
+color:#38bdf8;
+font-size:16px;
+letter-spacing:2px;
+}
+
+.hero h1{
+font-size:48px;
+color:#fff;
+margin:10px 0;
+}
+
+.hero p{
+color:#93c5fd;
+max-width:700px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+body{
+flex-direction:column;
+}
+
+.sidebar{
+position:relative;
+width:100%;
+height:auto;
+}
+
+.main{
+margin-left:0;
+width:100%;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- SIDEBAR -->
+<div class="sidebar">
 <h1>Mark J.</h1>
-<div>
+<p>IT Infrastructure Engineer</p>
+
+<a href="#hero">Home</a>
 <a href="#about">About</a>
 <a href="#education">Education</a>
 <a href="#skills">Skills</a>
 <a href="#training">Training</a>
-<a href="#certifications">Certifications</a>
 <a href="#experience">Experience</a>
 <a href="#contact">Contact</a>
 </div>
-</nav>
+
+<!-- MAIN -->
+<div class="main">
 
 <!-- HERO -->
-<section class="hero">
+<section id="hero" class="hero">
 <h2>IT Infrastructure Engineer</h2>
 <h1>Mark John Santos</h1>
 <p>
@@ -164,8 +173,6 @@ IT Infrastructure Engineer specializing in enterprise IT systems, network infras
 server administration, cybersecurity, and business IT solutions including PBX, CCTV,
 biometrics, and enterprise connectivity systems.
 </p>
-
-<a class="btn" href="#">Download CV</a>
 </section>
 
 <!-- ABOUT -->
@@ -183,12 +190,10 @@ Strong background in IT support, infrastructure deployment, and enterprise opera
 <h2 class="title">Educational Attainment</h2>
 
 <div class="card">
-<p>
 Bachelor of Science in Computer Engineering<br>
 AMA Computer College – Tuguegarao<br>
 Tuguegarao City, Philippines<br>
 (2010–2016)
-</p>
 </div>
 </section>
 
@@ -199,36 +204,28 @@ Tuguegarao City, Philippines<br>
 <div class="skill-grid">
 
 <div class="skill-card">
-<h3>Server & Network Administration</h3>
+<h3>Server & Network</h3>
 <ul>
-<li>Windows Server 2019 Administration</li>
-<li>Active Directory, DNS, DHCP, Group Policy</li>
-<li>DFS & Domain Controller Management</li>
+<li>Windows Server 2019</li>
+<li>Active Directory</li>
+<li>DNS / DHCP</li>
 </ul>
 </div>
 
 <div class="skill-card">
-<h3>Network Infrastructure Management</h3>
+<h3>Networking</h3>
 <ul>
 <li>Fortinet Firewalls</li>
-<li>Ruijie Routers & Switching</li>
-<li>VLAN, VPN, SD-WAN</li>
+<li>VPN / VLAN</li>
+<li>SD-WAN</li>
 </ul>
 </div>
 
 <div class="skill-card">
-<h3>System Backup & DR</h3>
+<h3>Security</h3>
 <ul>
-<li>Backup & Recovery Systems</li>
-<li>Disaster Recovery Planning</li>
-</ul>
-</div>
-
-<div class="skill-card">
-<h3>Security & Compliance</h3>
-<ul>
-<li>Kaspersky Endpoint Security</li>
-<li>MFA & VPN Security</li>
+<li>Kaspersky Endpoint</li>
+<li>MFA Security</li>
 </ul>
 </div>
 
@@ -237,59 +234,35 @@ Tuguegarao City, Philippines<br>
 
 <!-- TRAINING -->
 <section id="training">
-<h2 class="title">Professional Trainings</h2>
+<h2 class="title">Trainings</h2>
 
 <div class="card">
 <ul>
 <li>CompTIA Security+ - 2025</li>
-<li>Windows Server 2019 Administrator - 2022</li>
-<li>Cisco CCNA Routing - 2020</li>
+<li>Windows Server Admin - 2022</li>
+<li>Cisco CCNA - 2020</li>
 <li>CompTIA A+ - 2019</li>
-</ul>
-</div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-<h2 class="title">Certification Exams</h2>
-
-<div class="card">
-<ul>
-<li>Fortinet Network Security Associate Level 1 - 2023</li>
-<li>Fortinet Network Security Associate Level 2 - 2023</li>
-<li>Mikrotik Certified Network Associate - 2024</li>
-<li>Ruijie Certified Network Associate - 2025</li>
 </ul>
 </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-<h2 class="title">Work Experience</h2>
+<h2 class="title">Experience</h2>
 
 <div class="card">
 <h3>IT Manager - Kwik Moni Limited</h3>
-<p>July 2025 – Present</p>
+<p>2025 – Present</p>
 </div>
 
 <div class="card">
 <h3>IT Officer - Kwik Moni Limited</h3>
-<p>September 2022 – July 2025</p>
+<p>2022 – 2025</p>
 </div>
 
 <div class="card">
 <h3>IT Freelancer</h3>
-<p>2020 – March 2022</p>
-</div>
-
-<div class="card">
-<h3>IT Specialist / QGIS - LGU Camalaniugan</h3>
-<p>2017 – 2019</p>
-</div>
-
-<div class="card">
-<h3>IT Support - 2GO Express</h3>
-<p>2017</p>
+<p>2020 – 2022</p>
 </div>
 
 </section>
@@ -299,16 +272,13 @@ Tuguegarao City, Philippines<br>
 <h2 class="title">Contact</h2>
 
 <div class="card">
-<p>Email: yourname@email.com</p>
-<p>Phone: +63 XXX XXX XXXX</p>
-<p>Location: Philippines / Papua New Guinea</p>
+<p>Email: your@email.com</p>
+<p>Phone: +63 XXX XXX XXX</p>
 <p>LinkedIn: linkedin.com/in/yourprofile</p>
 </div>
 </section>
 
-<footer>
-© 2026 Mark John Santos | IT Infrastructure Engineer
-</footer>
+</div>
 
 </body>
 </html>
