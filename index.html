@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mark John Santos | IT Infrastructure Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
 *{
 margin:0;
@@ -17,7 +8,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#050f1f;
+background: radial-gradient(circle at top left,#061a2e,#050816 60%,#030712);
 color:#e5f2ff;
 }
 
@@ -30,16 +21,17 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 10%;
-background:rgba(5,15,31,0.8);
-backdrop-filter:blur(15px);
+background:rgba(5,15,31,0.6);
+backdrop-filter:blur(16px);
 z-index:1000;
-border-bottom:1px solid rgba(56,189,248,0.2);
+border-bottom:1px solid rgba(56,189,248,0.25);
 }
 
 nav h1{
 color:#38bdf8;
 font-size:18px;
-letter-spacing:1px;
+letter-spacing:2px;
+text-shadow:0 0 10px rgba(56,189,248,0.4);
 }
 
 nav a{
@@ -47,10 +39,12 @@ color:#cde7ff;
 margin-left:18px;
 text-decoration:none;
 font-size:14px;
+transition:0.3s;
 }
 
 nav a:hover{
 color:#38bdf8;
+text-shadow:0 0 10px rgba(56,189,248,0.5);
 }
 
 /* HERO */
@@ -60,20 +54,23 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 padding:0 10%;
-background:radial-gradient(circle at top right, rgba(56,189,248,0.15), transparent 40%);
+background:
+radial-gradient(circle at top right, rgba(56,189,248,0.18), transparent 40%),
+radial-gradient(circle at bottom left, rgba(139,92,246,0.15), transparent 40%);
 }
 
 .hero h2{
 color:#38bdf8;
 font-size:14px;
-letter-spacing:3px;
+letter-spacing:4px;
 text-transform:uppercase;
 }
 
 .hero h1{
-font-size:62px;
+font-size:64px;
 margin:10px 0;
 color:#ffffff;
+text-shadow:0 0 25px rgba(56,189,248,0.15);
 }
 
 .hero p{
@@ -91,19 +88,22 @@ font-weight:600;
 /* BUTTON */
 .btn{
 margin-top:25px;
-padding:12px 26px;
+padding:13px 28px;
 border:1px solid #38bdf8;
 color:#38bdf8;
 display:inline-block;
 text-decoration:none;
-border-radius:6px;
+border-radius:8px;
 transition:0.3s;
 font-size:14px;
+box-shadow:0 0 15px rgba(56,189,248,0.1);
 }
 
 .btn:hover{
-background:#38bdf8;
-color:#050f1f;
+background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+color:#050816;
+box-shadow:0 0 25px rgba(56,189,248,0.4);
+transform:translateY(-2px);
 }
 
 /* SECTIONS */
@@ -112,19 +112,22 @@ padding:100px 10%;
 }
 
 .section-title{
-font-size:28px;
+font-size:30px;
 color:#38bdf8;
 margin-bottom:30px;
+text-shadow:0 0 15px rgba(56,189,248,0.15);
 }
 
-/* ABOUT BOX */
+/* ABOUT */
 .about-box{
-background:rgba(11,42,74,0.6);
+background:rgba(11,42,74,0.55);
 padding:25px;
-border-radius:12px;
+border-radius:14px;
 border:1px solid rgba(56,189,248,0.2);
 line-height:1.9;
 color:#cde7ff;
+backdrop-filter:blur(10px);
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* SKILLS GRID */
@@ -136,16 +139,18 @@ gap:18px;
 
 /* CARD */
 .card{
-background:#0b2a4a;
+background:linear-gradient(145deg,rgba(11,42,74,0.75),rgba(5,15,31,0.6));
 padding:20px;
-border-radius:12px;
+border-radius:14px;
 border:1px solid rgba(56,189,248,0.15);
-transition:0.3s;
+transition:0.35s ease;
+backdrop-filter:blur(10px);
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-8px);
 border-color:#38bdf8;
+box-shadow:0 15px 35px rgba(56,189,248,0.15);
 }
 
 .card h3{
@@ -163,11 +168,17 @@ line-height:1.8;
 
 /* EXPERIENCE */
 .exp{
-background:#0b2a4a;
+background:rgba(11,42,74,0.6);
 padding:20px;
-border-radius:12px;
+border-radius:14px;
 margin-bottom:15px;
 border:1px solid rgba(56,189,248,0.15);
+transition:0.3s;
+}
+
+.exp:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
 }
 
 .exp h3{
@@ -194,164 +205,7 @@ font-size:13px;
 
 /* MOBILE */
 @media(max-width:768px){
-.hero h1{font-size:38px;}
+.hero h1{font-size:40px;}
 nav{flex-direction:column;gap:10px;}
 }
 </style>
-
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-<h1>MJS</h1>
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<h2>IT INFRASTRUCTURE ENGINEER</h2>
-
-<h1>Mark John Santos</h1>
-
-<p>
-I design, deploy, and manage complete <span class="highlight">enterprise IT infrastructure</span>
-including networks, servers, systems, and office technology environments across business branches.
-</p>
-
-<a class="btn" href="#experience">Explore My Work</a>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-<h2 class="section-title">Professional Summary</h2>
-
-<div class="about-box">
-Experienced IT Infrastructure Engineer with strong background in IT Helpdesk support and enterprise system deployment.
-Skilled in building complete IT environments from scratch including network infrastructure, server systems, and office technology integration.
-
-Hands-on experience in supporting business operations through CCTV systems, biometric access control, VoIP telephony,
-printer/network device management, and multi-site office connectivity.
-</div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-<h2 class="section-title">Technical Expertise</h2>
-
-<div class="skills-grid">
-
-<div class="card">
-<h3>IT Support</h3>
-<ul>
-<li>IT Helpdesk & End-User Support</li>
-<li>Hardware & Software Troubleshooting</li>
-<li>Device & Printer Management</li>
-<li>Incident Resolution</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>System Administration</h3>
-<ul>
-<li>Windows Server Administration</li>
-<li>Active Directory & Domain Services</li>
-<li>User Access Management</li>
-<li>System Deployment & Maintenance</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Database Administration</h3>
-<ul>
-<li>Database Setup & Configuration</li>
-<li>Backup & Recovery Management</li>
-<li>Monitoring & Maintenance</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Network Engineering</h3>
-<ul>
-<li>LAN / WAN Design</li>
-<li>Router & Switch Configuration</li>
-<li>MikroTik Administration</li>
-<li>Branch Connectivity</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Network Security</h3>
-<ul>
-<li>Fortinet Firewall Management</li>
-<li>VPN Configuration</li>
-<li>Security Policies</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Infrastructure & Systems</h3>
-<ul>
-<li>IT Infrastructure Deployment</li>
-<li>Office Branch Setup</li>
-<li>Server Room Infrastructure</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>Office Systems</h3>
-<ul>
-<li>CCTV Surveillance Systems</li>
-<li>Biometric Access Control</li>
-<li>VoIP / Telephone Systems</li>
-<li>Office Device Integration</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2 class="section-title">Experience</h2>
-
-<div class="exp">
-<h3>IT Helpdesk Engineer</h3>
-<p>Provided technical support for users, including troubleshooting systems, hardware, software, printers, and network issues.</p>
-</div>
-
-<div class="exp">
-<h3>IT Infrastructure Engineer</h3>
-<p>Designed and implemented enterprise IT infrastructure including servers, networks, and branch connectivity systems.</p>
-</div>
-
-<div class="exp">
-<h3>Enterprise Systems Integration</h3>
-<p>Implemented CCTV, biometric systems, VoIP telephony, and integrated office IT environments.</p>
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="section-title">Contact</h2>
-
-<div class="about-box">
-Email: your-email@example.com <br>
-LinkedIn: your LinkedIn profile
-</div>
-
-</section>
-
-<footer>
-© 2026 Mark John Santos | IT Infrastructure Engineer
-</footer>
-
-</body>
-</html>
