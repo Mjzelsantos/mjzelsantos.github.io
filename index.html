@@ -5,99 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mark John Santos | IT Infrastructure Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =======================
+/* =====================
+   THEME VARIABLES
+===================== */
+:root{
+--bg:#061a2e;
+--card:#0b2a4a;
+--text:#dbeafe;
+--muted:#93c5fd;
+--accent:#38bdf8;
+--border:rgba(56,189,248,0.2);
+}
+
+[data-theme="deep"]{
+--bg:#040b18;
+--card:#081a33;
+--text:#e6f0ff;
+--muted:#9bbce0;
+--accent:#00b4ff;
+--border:rgba(0,180,255,0.25);
+}
+
+[data-theme="soft"]{
+--bg:#0b1f35;
+--card:#123454;
+--text:#eaf4ff;
+--muted:#b6d6ff;
+--accent:#4cc9f0;
+--border:rgba(76,201,240,0.25);
+}
+
+/* =====================
    BASE
-======================= */
+===================== */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#050b18;
-color:#e6f2ff;
-overflow-x:hidden;
+background:var(--bg);
+color:var(--text);
+transition:0.4s ease;
 }
 
-/* =======================
-   BACKGROUND ANIMATION
-======================= */
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-overflow:hidden;
-}
-
-.circle{
-position:absolute;
-width:300px;
-height:300px;
-background:rgba(56,189,248,0.15);
-border-radius:50%;
-filter:blur(80px);
-animation:float 10s infinite ease-in-out;
-}
-
-.circle:nth-child(2){
-background:rgba(139,92,246,0.12);
-top:60%;
-left:70%;
-animation-delay:2s;
-}
-
-.circle:nth-child(1){
-top:20%;
-left:10%;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-40px)}
-}
-
-/* =======================
-   NAV
-======================= */
+/* NAV */
 nav{
 position:fixed;
 top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:18px 10%;
-background:rgba(5,11,24,0.6);
+background:rgba(0,0,0,0.25);
 backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(56,189,248,0.15);
+border-bottom:1px solid var(--border);
 z-index:1000;
 }
 
 nav h1{
-color:#38bdf8;
+color:var(--accent);
 font-size:18px;
 }
 
 nav a{
-color:#cde7ff;
-margin-left:18px;
+color:var(--text);
+margin-left:16px;
 text-decoration:none;
 font-size:14px;
-transition:0.3s;
 }
 
 nav a:hover{
-color:#38bdf8;
+color:var(--accent);
 }
 
-/* =======================
-   HERO
-======================= */
+/* THEME BUTTON */
+.theme-btn{
+padding:6px 12px;
+border:1px solid var(--accent);
+color:var(--accent);
+border-radius:6px;
+cursor:pointer;
+font-size:12px;
+margin-left:20px;
+}
+
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -107,123 +107,96 @@ padding:0 10%;
 }
 
 .hero h2{
-color:#38bdf8;
-letter-spacing:3px;
+color:var(--accent);
 font-size:14px;
+letter-spacing:3px;
 text-transform:uppercase;
 }
 
 .hero h1{
-font-size:60px;
+font-size:58px;
 margin:10px 0;
 }
 
 .hero p{
 max-width:850px;
-color:#a9c7e6;
+color:var(--muted);
 font-size:16px;
-line-height:1.8;
+line-height:1.7;
 }
 
 .btn{
 margin-top:25px;
-padding:12px 26px;
-border:1px solid #38bdf8;
-color:#38bdf8;
+padding:12px 24px;
+border:1px solid var(--accent);
+color:var(--accent);
 display:inline-block;
-border-radius:6px;
 text-decoration:none;
+border-radius:6px;
 transition:0.3s;
 }
 
 .btn:hover{
-background:#38bdf8;
-color:#050b18;
+background:var(--accent);
+color:var(--bg);
 }
 
-/* =======================
-   SECTIONS
-======================= */
+/* SECTIONS */
 section{
-padding:100px 10%;
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
+padding:90px 10%;
 }
 
 .title{
-color:#38bdf8;
+color:var(--accent);
 font-size:26px;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
-/* =======================
-   CARDS
-======================= */
-.grid{
+/* CARDS */
+.card{
+background:var(--card);
+padding:20px;
+border-radius:12px;
+border:1px solid var(--border);
+margin-bottom:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+/* SKILLS GRID */
+.skills-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:18px;
 }
 
-.card{
-background:rgba(11,42,74,0.7);
-border:1px solid rgba(56,189,248,0.15);
-padding:20px;
-border-radius:12px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-border-color:#38bdf8;
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-
-.card h3{
-color:#ffffff;
-margin-bottom:8px;
-}
-
-.card p{
-color:#a9c7e6;
-font-size:14px;
-line-height:1.7;
-}
-
-/* =======================
-   FOOTER
-======================= */
+/* FOOTER */
 footer{
 text-align:center;
-padding:30px;
-color:#7aa6c7;
-border-top:1px solid rgba(56,189,248,0.15);
+padding:25px;
+color:var(--muted);
+border-top:1px solid var(--border);
+margin-top:40px;
 }
 </style>
 </head>
 
-<body>
-
-<!-- BACKGROUND -->
-<div class="bg">
-<div class="circle"></div>
-<div class="circle"></div>
-</div>
+<body data-theme="navy">
 
 <!-- NAV -->
 <nav>
 <h1>MJS</h1>
+
 <div>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#experience">Experience</a>
 <a href="#contact">Contact</a>
+
+<button class="theme-btn" onclick="toggleTheme()">Theme</button>
 </div>
 </nav>
 
@@ -233,27 +206,30 @@ border-top:1px solid rgba(56,189,248,0.15);
 <h1>Mark John Santos</h1>
 
 <p>
-I design and manage enterprise IT infrastructure including networks, servers,
-system administration, and office technology integration such as CCTV, biometrics, and VoIP systems.
+IT Infrastructure Engineer specializing in IT Helpdesk, system administration,
+network engineering, and enterprise infrastructure deployment including office branch connectivity,
+servers, CCTV, biometric systems, and VoIP integration.
 </p>
 
-<a class="btn" href="#experience">View Experience</a>
+<a class="btn" href="#experience">Explore Profile</a>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
 <h2 class="title">Professional Summary</h2>
+
 <div class="card">
-Experienced IT Infrastructure Engineer specializing in end-to-end IT systems deployment,
-network engineering, and enterprise infrastructure management across business environments.
+Experienced IT Infrastructure Engineer with strong foundation in IT Helpdesk support and enterprise system deployment.
+Skilled in designing and maintaining complete IT environments including network infrastructure, server systems,
+and office technology integration across business operations.
 </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-<h2 class="title">Technical Skills</h2>
+<h2 class="title">Technical Expertise</h2>
 
-<div class="grid">
+<div class="skills-grid">
 
 <div class="card">
 <h3>IT Support</h3>
@@ -262,32 +238,32 @@ network engineering, and enterprise infrastructure management across business en
 
 <div class="card">
 <h3>System Administration</h3>
-<p>Windows Server, Active Directory</p>
+<p>Windows Server, Active Directory, user management</p>
 </div>
 
 <div class="card">
 <h3>Database</h3>
-<p>Setup, backup, maintenance</p>
+<p>Installation, backup, maintenance, monitoring</p>
 </div>
 
 <div class="card">
 <h3>Networking</h3>
-<p>LAN/WAN, MikroTik, routing</p>
+<p>LAN/WAN, MikroTik, routing, switching</p>
 </div>
 
 <div class="card">
 <h3>Security</h3>
-<p>Firewall, VPN, Fortinet</p>
+<p>Fortinet firewall, VPN, policies</p>
 </div>
 
 <div class="card">
 <h3>Infrastructure</h3>
-<p>Server setup, branch connectivity</p>
+<p>Office setup, branch connectivity, servers</p>
 </div>
 
 <div class="card">
 <h3>Systems Integration</h3>
-<p>CCTV, biometrics, VoIP</p>
+<p>CCTV, biometrics, VoIP, office devices</p>
 </div>
 
 </div>
@@ -298,18 +274,15 @@ network engineering, and enterprise infrastructure management across business en
 <h2 class="title">Experience</h2>
 
 <div class="card">
-<h3>IT Helpdesk Engineer</h3>
-<p>Provided technical support and troubleshooting for users and systems.</p>
+IT Helpdesk Engineer – End-user support and troubleshooting
 </div>
 
 <div class="card">
-<h3>IT Infrastructure Engineer</h3>
-<p>Designed and deployed enterprise IT infrastructure and network systems.</p>
+IT Infrastructure Engineer – Network, server, and system deployment
 </div>
 
 <div class="card">
-<h3>Enterprise Systems Integration</h3>
-<p>Implemented CCTV, biometrics, and VoIP solutions.</p>
+Enterprise Systems – CCTV, biometrics, VoIP integration
 </div>
 
 </section>
@@ -317,6 +290,7 @@ network engineering, and enterprise infrastructure management across business en
 <!-- CONTACT -->
 <section id="contact">
 <h2 class="title">Contact</h2>
+
 <div class="card">
 Email: your-email@example.com <br>
 LinkedIn: your profile
@@ -328,18 +302,13 @@ LinkedIn: your profile
 </footer>
 
 <script>
-// scroll animation
-const sections=document.querySelectorAll("section");
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
+function toggleTheme(){
+const themes=["navy","deep","soft"];
+let current=document.body.getAttribute("data-theme");
+let index=themes.indexOf(current);
+let next=themes[(index+1)%themes.length];
+document.body.setAttribute("data-theme",next);
 }
-});
-},{threshold:0.15});
-
-sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
