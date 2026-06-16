@@ -1,339 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mark John Santos | IT Infrastructure Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
-body{
-background:#061a2e;
-color:#dbeafe;
-}
-
-/* NAV */
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 10%;
-background:rgba(6,26,46,0.95);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-nav h1{
-color:#38bdf8;
-font-size:20px;
-}
-
-nav a{
-color:#dbeafe;
-margin-left:20px;
-text-decoration:none;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:0 10%;
-}
-
-.hero h2{
-color:#38bdf8;
-font-size:18px;
-}
-
-.hero h1{
-font-size:55px;
-margin:10px 0;
-}
-
-.hero p{
-max-width:900px;
-color:#93c5fd;
-font-size:18px;
-line-height:1.7;
-}
-
-.btn{
-margin-top:25px;
-padding:12px 25px;
-border:1px solid #38bdf8;
-color:#38bdf8;
-display:inline-block;
-text-decoration:none;
-border-radius:5px;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#38bdf8;
-color:#061a2e;
-}
-
-/* SECTIONS */
-section{
-padding:90px 10%;
-}
-
-.title{
-color:#38bdf8;
-font-size:28px;
-margin-bottom:30px;
-}
-
-/* ABOUT */
-.about p{
-max-width:950px;
-line-height:1.8;
-color:#cbd5e1;
-}
-
-/* SKILLS GRID */
-.skills-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-/* SKILL CARD */
-.skill-card{
-background:#0b2a4a;
-padding:20px;
-border-radius:10px;
-border:1px solid #1d4ed8;
-transition:0.3s;
-}
-
-.skill-card:hover{
-transform:translateY(-5px);
-}
-
-.skill-card h3{
-color:#38bdf8;
-margin-bottom:10px;
-font-size:16px;
-}
-
-.skill-card ul{
-list-style:none;
-color:#93c5fd;
-line-height:1.7;
-font-size:14px;
-}
-
-/* EXPERIENCE */
-.card{
-background:#0b2a4a;
-padding:20px;
-border-radius:10px;
-margin-bottom:15px;
-border:1px solid #1d4ed8;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-color:#93c5fd;
-}
-
-@media(max-width:768px){
-.hero h1{font-size:32px;}
-nav{flex-direction:column;}
-}
-</style>
-
-</head>
-
-<body>
-
-<nav>
-<h1>MJS</h1>
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#experience">Experience</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<h2>IT Infrastructure • Network • Systems • Database</h2>
-
-<h1>Mark John Santos</h1>
-
-<p>
-IT Infrastructure Engineer specializing in building, managing, and supporting complete IT environments
-including networks, servers, and enterprise office systems.
-</p>
-
-<a class="btn" href="#experience">View Experience</a>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-<h2 class="title">About Me</h2>
-<div class="about">
-<p>
-Experienced IT Infrastructure Engineer with strong background in IT Helpdesk support and full-scale IT system deployment.
-Skilled in designing and maintaining enterprise networks, server infrastructure, and office IT systems including CCTV, biometric, and VoIP solutions.
-</p>
-</div>
-</section>
-
 <!-- SKILLS -->
 <section id="skills">
-<h2 class="title">Technical Skills</h2>
+<h2 class="title">Technical Expertise</h2>
 
 <div class="skills-grid">
 
-<!-- HELP DESK -->
+<!-- IT SUPPORT -->
 <div class="skill-card">
-<h3>IT Support</h3>
+<h3>IT Support & Service Desk</h3>
 <ul>
-<li>IT Helpdesk Support</li>
-<li>End-User Support</li>
-<li>Hardware & Software Troubleshooting</li>
-<li>Printer & Device Support</li>
+<li>IT Helpdesk & End-User Support</li>
+<li>Hardware, Software & Peripheral Troubleshooting</li>
+<li>Printer, Scanner & Office Device Support</li>
+<li>Incident Resolution & Ticket Handling</li>
 </ul>
 </div>
 
-<!-- SYSTEM ADMIN -->
+<!-- SYSTEM ADMINISTRATION -->
 <div class="skill-card">
-<h3>Systems Administration</h3>
+<h3>System Administration</h3>
 <ul>
-<li>System Administration</li>
-<li>Server Management</li>
-<li>Active Directory / Domain Setup</li>
-<li>Database Administration</li>
+<li>Windows Server Administration</li>
+<li>Active Directory (AD) & Domain Services</li>
+<li>User & Access Management</li>
+<li>Group Policy (GPO) Configuration</li>
+<li>System Deployment & Maintenance</li>
 </ul>
 </div>
 
-<!-- NETWORK -->
+<!-- DATABASE ADMIN -->
+<div class="skill-card">
+<h3>Database Administration</h3>
+<ul>
+<li>Database Installation & Configuration</li>
+<li>Database Maintenance & Monitoring</li>
+<li>Backup & Recovery Management</li>
+<li>Performance Optimization (Basic Administration Level)</li>
+</ul>
+</div>
+
+<!-- NETWORK ENGINEERING -->
 <div class="skill-card">
 <h3>Network Engineering</h3>
 <ul>
-<li>Network Design & Troubleshooting</li>
+<li>LAN / WAN Network Design & Implementation</li>
 <li>Router & Switch Configuration</li>
-<li>MikroTik Configuration</li>
-<li>Network Connectivity (Branch Setup)</li>
+<li>Network Troubleshooting & Optimization</li>
+<li>Multi-Site / Branch Connectivity Setup</li>
+<li>MikroTik RouterOS Configuration</li>
 </ul>
 </div>
 
-<!-- SECURITY -->
+<!-- NETWORK SECURITY -->
 <div class="skill-card">
-<h3>Security</h3>
+<h3>Network Security</h3>
 <ul>
-<li>Firewall Management (Fortinet)</li>
-<li>Network Security</li>
+<li>Firewall Configuration (Fortinet)</li>
+<li>Network Access Control & Security Policies</li>
+<li>VPN Setup & Secure Remote Connectivity</li>
+<li>Threat Monitoring & Basic Security Hardening</li>
 </ul>
 </div>
 
 <!-- INFRASTRUCTURE -->
 <div class="skill-card">
-<h3>Infrastructure</h3>
+<h3>IT Infrastructure Engineering</h3>
 <ul>
-<li>IT Infrastructure Deployment</li>
-<li>Office Branch Connectivity</li>
-<li>Enterprise Network Setup</li>
+<li>End-to-End IT Infrastructure Deployment</li>
+<li>Office Branch IT Setup & Integration</li>
+<li>Server Room Setup & Cabling Infrastructure</li>
+<li>Enterprise System Deployment & Support</li>
 </ul>
 </div>
 
 <!-- SYSTEM INTEGRATION -->
 <div class="skill-card">
-<h3>Systems Integration</h3>
+<h3>Office Systems Integration</h3>
 <ul>
-<li>CCTV Systems</li>
-<li>Biometric Access Systems</li>
-<li>VoIP / Telephone Systems</li>
+<li>CCTV Surveillance Systems Installation</li>
+<li>Biometric Access Control Systems</li>
+<li>VoIP / IP Telephony Systems</li>
+<li>Office Device Integration (Printers, Network Devices)</li>
 </ul>
 </div>
 
 </div>
 </section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2 class="title">Experience</h2>
-
-<div class="card">
-<h3>IT Helpdesk Engineer</h3>
-<p>Provided technical support for users including troubleshooting hardware, software, printers, and network issues.</p>
-</div>
-
-<div class="card">
-<h3>IT Infrastructure Engineer</h3>
-<p>Designed and implemented IT infrastructure including networks, servers, domain systems, and enterprise environments.</p>
-</div>
-
-<div class="card">
-<h3>Enterprise Systems Deployment</h3>
-<p>Implemented CCTV, biometric systems, VoIP/telephone systems, and office IT integrations.</p>
-</div>
-
-<div class="card">
-<h3>Network Administration</h3>
-<p>Managed routers, switches, firewall configurations, and ensured stable multi-site connectivity.</p>
-</div>
-
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-<h2 class="title">Services</h2>
-
-<div class="card">
-<p>
-✔ IT Infrastructure Setup<br>
-✔ Network Design & Administration<br>
-✔ Server & Domain Management<br>
-✔ IT Helpdesk Support<br>
-✔ CCTV / Biometric / VoIP Setup<br>
-✔ Office IT System Integration
-</p>
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="title">Contact</h2>
-<p>Email: your-email@example.com</p>
-<p>LinkedIn: your LinkedIn profile</p>
-</section>
-
-<footer>
-© 2026 Mark John Santos | IT Infrastructure Engineer
-</footer>
-
-</body>
-</html>
