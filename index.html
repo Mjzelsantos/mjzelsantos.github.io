@@ -2,283 +2,304 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mark John Santos | IT Infrastructure Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark John Santos | IT Infrastructure Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-body{
-background:#061a2e;
-color:#dbeafe;
-display:flex;
-}
+        body {
+            background: #061a2e;
+            color: #dbeafe;
+            line-height: 1.6;
+        }
 
-/* SIDEBAR */
-.sidebar{
-width:300px;
-height:100vh;
-position:fixed;
-left:0;
-top:0;
-background:#0b2a4a;
-padding:30px 20px;
-border-right:1px solid rgba(56,189,248,0.2);
-}
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 10%;
+            background: rgba(6, 26, 46, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+        }
 
-.sidebar h1{
-color:#38bdf8;
-font-size:20px;
-margin-bottom:10px;
-}
+        nav h1 {
+            color: #38bdf8;
+            font-size: 18px;
+        }
 
-.sidebar p{
-font-size:13px;
-color:#93c5fd;
-margin-bottom:20px;
-}
+        nav a {
+            color: #dbeafe;
+            margin-left: 18px;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-.sidebar a{
-display:block;
-color:#dbeafe;
-text-decoration:none;
-margin:12px 0;
-font-size:14px;
-}
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-.sidebar a:hover{
-color:#38bdf8;
-}
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10%;
+        }
 
-/* MAIN CONTENT */
-.main{
-margin-left:300px;
-width:calc(100% - 300px);
-}
+        .hero h2 {
+            color: #38bdf8;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
 
-section{
-padding:70px 10%;
-border-bottom:1px solid rgba(56,189,248,0.08);
-}
+        .hero h1 {
+            font-size: 52px;
+            color: #fff;
+            margin: 10px 0;
+        }
 
-.title{
-color:#38bdf8;
-font-size:26px;
-margin-bottom:20px;
-}
+        .hero p {
+            color: #93c5fd;
+            max-width: 900px;
+        }
 
-.card{
-background:#0b2a4a;
-padding:18px;
-border-radius:10px;
-margin-bottom:12px;
-border:1px solid rgba(56,189,248,0.2);
-}
+        section {
+            padding: 90px 10%;
+        }
 
-.skill-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-}
+        .title {
+            color: #38bdf8;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
 
-.skill-card{
-background:#0b2a4a;
-padding:18px;
-border-radius:10px;
-border:1px solid rgba(56,189,248,0.2);
-}
+        .card,
+        .skill-card {
+            background: #0b2a4a;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
 
-ul{
-margin-left:18px;
-color:#cbd5e1;
-font-size:14px;
-}
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
 
-/* HERO */
-.hero{
-padding:120px 10%;
-}
+        ul {
+            margin-left: 18px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
 
-.hero h2{
-color:#38bdf8;
-font-size:16px;
-letter-spacing:2px;
-}
-
-.hero h1{
-font-size:48px;
-color:#fff;
-margin:10px 0;
-}
-
-.hero p{
-color:#93c5fd;
-max-width:700px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-body{
-flex-direction:column;
-}
-
-.sidebar{
-position:relative;
-width:100%;
-height:auto;
-}
-
-.main{
-margin-left:0;
-width:100%;
-}
-}
-</style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            color: #93c5fd;
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-<h1>Mark J.</h1>
-<p>IT Infrastructure Engineer</p>
+    <!-- NAV -->
+    <nav>
+        <h1>Mark J.</h1>
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#training">Training</a>
+            <a href="#experience">Experience</a>
+        </div>
+    </nav>
 
-<a href="#hero">Home</a>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#training">Training</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
-</div>
+    <!-- HERO -->
+    <section class="hero">
+        <h2>IT Infrastructure Engineer</h2>
+        <h1>Mark John Santos</h1>
+        <p>
+            IT Infrastructure Engineer specializing in enterprise IT systems, network infrastructure,
+            server administration, cybersecurity, and business IT solutions including PBX, CCTV,
+            biometrics, and enterprise connectivity systems.
+        </p>
+    </section>
 
-<!-- MAIN -->
-<div class="main">
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="title">Professional Profile</h2>
+        <p>
+            Experienced IT Infrastructure Engineer with expertise in enterprise environments,
+            server management, network engineering, IT security, and business system integration.
+            Strong background in IT support, infrastructure deployment, and enterprise operations.
+        </p>
+    </section>
 
-<!-- HERO -->
-<section id="hero" class="hero">
-<h2>IT Infrastructure Engineer</h2>
-<h1>Mark John Santos</h1>
-<p>
-IT Infrastructure Engineer specializing in enterprise IT systems, network infrastructure,
-server administration, cybersecurity, and business IT solutions including PBX, CCTV,
-biometrics, and enterprise connectivity systems.
-</p>
-</section>
+    <!-- EDUCATION -->
+    <section id="education">
+        <h2 class="title">Educational Attainment</h2>
 
-<!-- ABOUT -->
-<section id="about">
-<h2 class="title">Professional Profile</h2>
-<p>
-Experienced IT Infrastructure Engineer with expertise in enterprise environments,
-server management, network engineering, IT security, and business system integration.
-Strong background in IT support, infrastructure deployment, and enterprise operations.
-</p>
-</section>
+        <div class="card">
+            <p>
+                Bachelor of Science in Computer Engineering<br>
+                AMA Computer College – Tuguegarao<br>
+                Tuguegarao City, Philippines<br>
+                (2010–2016)
+            </p>
+        </div>
+    </section>
 
-<!-- EDUCATION -->
-<section id="education">
-<h2 class="title">Educational Attainment</h2>
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="title">Technical Expertise</h2>
 
-<div class="card">
-Bachelor of Science in Computer Engineering<br>
-AMA Computer College – Tuguegarao<br>
-Tuguegarao City, Philippines<br>
-(2010–2016)
-</div>
-</section>
+        <div class="skill-grid">
 
-<!-- SKILLS -->
-<section id="skills">
-<h2 class="title">Technical Expertise</h2>
+            <div class="skill-card">
+                <h3>Server & Network Administration</h3>
+                <ul>
+                    <li>Windows Server 2019 Administration</li>
+                    <li>Active Directory, DNS, DHCP, Group Policy</li>
+                    <li>DFS & Domain Controller Management</li>
+                </ul>
+            </div>
 
-<div class="skill-grid">
+            <div class="skill-card">
+                <h3>Network Infrastructure Management</h3>
+                <ul>
+                    <li>Fortinet Firewalls & Security Policies</li>
+                    <li>Ruijie Routers & Layer 2/3 Switching</li>
+                    <li>VLAN, VPN, SD-WAN, Dual ISP Failover</li>
+                </ul>
+            </div>
 
-<div class="skill-card">
-<h3>Server & Network</h3>
-<ul>
-<li>Windows Server 2019</li>
-<li>Active Directory</li>
-<li>DNS / DHCP</li>
-</ul>
-</div>
+            <div class="skill-card">
+                <h3>System Backup & DR</h3>
+                <ul>
+                    <li>Backup & Recovery Systems</li>
+                    <li>Secondary Server Management</li>
+                    <li>Disaster Recovery Planning</li>
+                </ul>
+            </div>
 
-<div class="skill-card">
-<h3>Networking</h3>
-<ul>
-<li>Fortinet Firewalls</li>
-<li>VPN / VLAN</li>
-<li>SD-WAN</li>
-</ul>
-</div>
+            <div class="skill-card">
+                <h3>Email & Communication Systems</h3>
+                <ul>
+                    <li>cPanel / Exabytes Email Management</li>
+                    <li>Email Migration & Archiving</li>
+                    <li>Microsoft Outlook Support</li>
+                </ul>
+            </div>
 
-<div class="skill-card">
-<h3>Security</h3>
-<ul>
-<li>Kaspersky Endpoint</li>
-<li>MFA Security</li>
-</ul>
-</div>
+            <div class="skill-card">
+                <h3>Database & Applications</h3>
+                <ul>
+                    <li>FinPower Connect Support</li>
+                    <li>System Deployment & Maintenance</li>
+                    <li>Data Integrity & Access Control</li>
+                </ul>
+            </div>
 
-</div>
-</section>
+            <div class="skill-card">
+                <h3>Security & Compliance</h3>
+                <ul>
+                    <li>Kaspersky Endpoint Security</li>
+                    <li>MFA & VPN Security</li>
+                    <li>Role-Based Access Control</li>
+                </ul>
+            </div>
 
-<!-- TRAINING -->
-<section id="training">
-<h2 class="title">Trainings</h2>
+            <div class="skill-card">
+                <h3>IT Helpdesk</h3>
+                <ul>
+                    <li>PC Setup & Software Installation</li>
+                    <li>User Onboarding</li>
+                    <li>Printer & Device Support</li>
+                </ul>
+            </div>
 
-<div class="card">
-<ul>
-<li>CompTIA Security+ - 2025</li>
-<li>Windows Server Admin - 2022</li>
-<li>Cisco CCNA - 2020</li>
-<li>CompTIA A+ - 2019</li>
-</ul>
-</div>
-</section>
+        </div>
+    </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-<h2 class="title">Experience</h2>
+    <!-- TRAINING -->
+    <section id="training">
+        <h2 class="title">Professional Trainings & Certification Exam</h2>
 
-<div class="card">
-<h3>IT Manager - Kwik Moni Limited</h3>
-<p>2025 – Present</p>
-</div>
+        <div class="card">
+            <ul>
+                <li>CompTIA Security+ - 2025</li>
+                <li>Microsoft Windows Server 2019 Administrator Automation using PowerShell - 2023</li>
+                <li>Microsoft Windows Server 2019 Administrator - 2022</li>
+                <li>Cisco CCNA Routing - 2020</li>
+                <li>CompTIA A+ - 2019</li>
+            </ul>
+        </div>
+    </section>
 
-<div class="card">
-<h3>IT Officer - Kwik Moni Limited</h3>
-<p>2022 – 2025</p>
-</div>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h2 class="title">Work Experience</h2>
 
-<div class="card">
-<h3>IT Freelancer</h3>
-<p>2020 – 2022</p>
-</div>
+        <div class="card">
+            <h3>IT Manager - Kwik Moni Limited</h3>
+            <p>July 2025 – Present</p>
+        </div>
 
-</section>
+        <div class="card">
+            <h3>IT Officer - Kwik Moni Limited</h3>
+            <p>September 2022 – July 2025</p>
+        </div>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="title">Contact</h2>
+        <div class="card">
+            <h3>IT Freelancer</h3>
+            <p>2020 – March 2022</p>
+        </div>
 
-<div class="card">
-<p>Email: your@email.com</p>
-<p>Phone: +63 XXX XXX XXX</p>
-<p>LinkedIn: linkedin.com/in/yourprofile</p>
-</div>
-</section>
+        <div class="card">
+            <h3>CCNA Exam Preparation</h3>
+            <p>October 2019 – January 2020</p>
+        </div>
 
-</div>
+        <div class="card">
+            <h3>IT Specialist / QGIS - LGU Camalaniugan</h3>
+            <p>August 2017 – October 2019</p>
+        </div>
+
+        <div class="card">
+            <h3>IT Support / Customer Service - 2GO Express</h3>
+            <p>January 2017 – July 2017</p>
+        </div>
+
+        <div class="card">
+            <h3>IT Technician - R&J Enterprises</h3>
+            <p>June 2016 – January 2017</p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Mark John Santos | IT Infrastructure Engineer
+    </footer>
 
 </body>
+
 </html>
