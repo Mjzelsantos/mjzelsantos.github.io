@@ -1,87 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark John Santos | IT Infrastructure Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#061a2e;
+color:#dbeafe;
+line-height:1.6;
+}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:rgba(6,26,46,0.92);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid rgba(56,189,248,0.15);
+}
+
+nav h1{
+color:#38bdf8;
+font-size:18px;
+letter-spacing:1px;
+}
+
+nav a{
+color:#dbeafe;
+margin-left:18px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:0 10%;
+}
+
+.hero h2{
+color:#38bdf8;
+font-size:16px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.hero h1{
+font-size:58px;
+margin:10px 0;
+color:#ffffff;
+}
+
+.hero p{
+max-width:850px;
+color:#93c5fd;
+font-size:17px;
+margin-top:10px;
+}
+
+.btn{
+margin-top:25px;
+padding:12px 25px;
+border:1px solid #38bdf8;
+color:#38bdf8;
+display:inline-block;
+text-decoration:none;
+border-radius:6px;
+transition:0.3s;
+font-size:14px;
+}
+
+.btn:hover{
+background:#38bdf8;
+color:#061a2e;
+}
+
+/* SECTIONS */
+section{
+padding:90px 10%;
+}
+
+.title{
+color:#38bdf8;
+font-size:26px;
+margin-bottom:25px;
+}
+
+/* ABOUT */
+.about p{
+max-width:950px;
+color:#cbd5e1;
+font-size:15px;
+line-height:1.9;
+}
+
+/* SKILLS GRID */
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:18px;
+}
+
+/* SKILL CARD */
+.skill-card{
+background:#0b2a4a;
+padding:22px;
+border-radius:10px;
+border:1px solid rgba(29,78,216,0.6);
+transition:0.3s;
+}
+
+.skill-card:hover{
+transform:translateY(-6px);
+border-color:#38bdf8;
+}
+
+.skill-card h3{
+color:#38bdf8;
+margin-bottom:12px;
+font-size:15px;
+}
+
+.skill-card ul{
+list-style:none;
+color:#93c5fd;
+font-size:14px;
+line-height:1.8;
+}
+
+/* EXPERIENCE */
+.card{
+background:#0b2a4a;
+padding:22px;
+border-radius:10px;
+margin-bottom:16px;
+border:1px solid rgba(29,78,216,0.6);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:#38bdf8;
+}
+
+.card h3{
+color:#ffffff;
+margin-bottom:8px;
+font-size:16px;
+}
+
+.card p{
+color:#93c5fd;
+font-size:14px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:25px;
+color:#93c5fd;
+font-size:13px;
+border-top:1px solid rgba(56,189,248,0.15);
+margin-top:40px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:36px;}
+nav{flex-direction:column;gap:10px;}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+<h1>MJS</h1>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h2>IT Infrastructure Engineer</h2>
+<h1>Mark John Santos</h1>
+
+<p>
+IT Infrastructure Engineer specializing in IT Helpdesk support, network engineering,
+system administration, and enterprise IT infrastructure deployment including office branch connectivity,
+servers, and integrated business systems.
+</p>
+
+<a class="btn" href="#experience">View Experience</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 class="title">Professional Profile</h2>
+<p>
+Experienced IT Infrastructure Engineer with strong foundation in IT Helpdesk support and progressive experience
+in designing and implementing enterprise IT environments. Skilled in managing end-to-end infrastructure including
+network systems, servers, database support, and office technology integration such as CCTV, biometric systems,
+and VoIP solutions.
+</p>
+</section>
+
 <!-- SKILLS -->
 <section id="skills">
 <h2 class="title">Technical Expertise</h2>
 
 <div class="skills-grid">
 
-<!-- IT SUPPORT -->
 <div class="skill-card">
 <h3>IT Support & Service Desk</h3>
 <ul>
 <li>IT Helpdesk & End-User Support</li>
-<li>Hardware, Software & Peripheral Troubleshooting</li>
-<li>Printer, Scanner & Office Device Support</li>
-<li>Incident Resolution & Ticket Handling</li>
+<li>Hardware & Software Troubleshooting</li>
+<li>Printer & Device Management</li>
+<li>Incident Resolution</li>
 </ul>
 </div>
 
-<!-- SYSTEM ADMINISTRATION -->
 <div class="skill-card">
 <h3>System Administration</h3>
 <ul>
 <li>Windows Server Administration</li>
-<li>Active Directory (AD) & Domain Services</li>
+<li>Active Directory / Domain Services</li>
 <li>User & Access Management</li>
-<li>Group Policy (GPO) Configuration</li>
 <li>System Deployment & Maintenance</li>
 </ul>
 </div>
 
-<!-- DATABASE ADMIN -->
 <div class="skill-card">
 <h3>Database Administration</h3>
 <ul>
-<li>Database Installation & Configuration</li>
-<li>Database Maintenance & Monitoring</li>
+<li>Database Installation & Maintenance</li>
 <li>Backup & Recovery Management</li>
-<li>Performance Optimization (Basic Administration Level)</li>
+<li>Performance Monitoring</li>
 </ul>
 </div>
 
-<!-- NETWORK ENGINEERING -->
 <div class="skill-card">
 <h3>Network Engineering</h3>
 <ul>
-<li>LAN / WAN Network Design & Implementation</li>
+<li>LAN/WAN Design & Implementation</li>
 <li>Router & Switch Configuration</li>
-<li>Network Troubleshooting & Optimization</li>
-<li>Multi-Site / Branch Connectivity Setup</li>
-<li>MikroTik RouterOS Configuration</li>
+<li>MikroTik Administration</li>
+<li>Branch Connectivity Setup</li>
 </ul>
 </div>
 
-<!-- NETWORK SECURITY -->
 <div class="skill-card">
 <h3>Network Security</h3>
 <ul>
-<li>Firewall Configuration (Fortinet)</li>
-<li>Network Access Control & Security Policies</li>
-<li>VPN Setup & Secure Remote Connectivity</li>
-<li>Threat Monitoring & Basic Security Hardening</li>
+<li>Firewall Management (Fortinet)</li>
+<li>VPN Configuration</li>
+<li>Network Security Policies</li>
 </ul>
 </div>
 
-<!-- INFRASTRUCTURE -->
 <div class="skill-card">
-<h3>IT Infrastructure Engineering</h3>
+<h3>Infrastructure & Systems</h3>
 <ul>
-<li>End-to-End IT Infrastructure Deployment</li>
-<li>Office Branch IT Setup & Integration</li>
-<li>Server Room Setup & Cabling Infrastructure</li>
-<li>Enterprise System Deployment & Support</li>
+<li>IT Infrastructure Deployment</li>
+<li>Office Branch Setup</li>
+<li>Server Room Configuration</li>
+<li>Enterprise IT Systems</li>
 </ul>
 </div>
 
-<!-- SYSTEM INTEGRATION -->
 <div class="skill-card">
 <h3>Office Systems Integration</h3>
 <ul>
-<li>CCTV Surveillance Systems Installation</li>
-<li>Biometric Access Control Systems</li>
-<li>VoIP / IP Telephony Systems</li>
-<li>Office Device Integration (Printers, Network Devices)</li>
+<li>CCTV Surveillance Systems</li>
+<li>Biometric Access Systems</li>
+<li>VoIP / IP Telephony</li>
+<li>Office Device Integration</li>
 </ul>
 </div>
 
 </div>
 </section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 class="title">Experience</h2>
+
+<div class="card">
+<h3>IT Helpdesk Engineer</h3>
+<p>Provided end-user support, troubleshooting systems, hardware, software, printers, and network issues.</p>
+</div>
+
+<div class="card">
+<h3>IT Infrastructure Engineer</h3>
+<p>Designed and deployed IT infrastructure including servers, networks, and enterprise systems across office environments.</p>
+</div>
+
+<div class="card">
+<h3>Enterprise Systems Integration</h3>
+<p>Implemented CCTV, biometric systems, VoIP, and integrated office IT solutions for business operations.</p>
+</div>
+
+<div class="card">
+<h3>Network Administration</h3>
+<p>Managed network infrastructure including routers, switches, firewall systems, and branch connectivity.</p>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="title">Contact</h2>
+<p>Email: your-email@example.com</p>
+<p>LinkedIn: your LinkedIn profile</p>
+</section>
+
+<footer>
+© 2026 Mark John Santos | IT Infrastructure Engineer
+</footer>
+
+</body>
+</html>
