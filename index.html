@@ -15,7 +15,7 @@
                     },
                     keyframes: {
                         fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
@@ -27,12 +27,12 @@
         .custom-card {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             border: 1px solid #334155;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .custom-card:hover {
             border-color: #fbbf24;
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px -10px rgba(251, 191, 36, 0.1);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 30px -10px rgba(251, 191, 36, 0.15);
         }
         .nav-link {
             color: #94a3b8;
@@ -53,6 +53,17 @@
         }
         @media (min-width: 768px) {
             .section-title { font-size: 2.5rem; }
+        }
+        
+        /* Intersection Observer Fade Class */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -102,14 +113,10 @@
                     </a>
                 </div>
             </div>
-
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
-                <i data-lucide="chevron-down" class="w-6 h-6 text-slate-500"></i>
-            </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-900 bg-slate-900/20">
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-900 bg-slate-900/20 reveal-on-scroll">
         <div class="max-w-4xl mx-auto">
             <div class="text-center md:text-left mb-12">
                 <h2 class="section-title">Professional Profile</h2>
@@ -138,7 +145,7 @@
         </div>
     </section>
 
-    <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 reveal-on-scroll">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-4">
                 <h2 class="section-title">Technical Expertise</h2>
@@ -147,7 +154,7 @@
         </div>
     </section>
 
-    <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/30 border-y border-slate-900">
+    <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/30 border-y border-slate-900 reveal-on-scroll">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-4">
                 <h2 class="section-title">Work Experience</h2>
@@ -156,7 +163,7 @@
         </div>
     </section>
 
-    <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8">
+    <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8 reveal-on-scroll">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-4">
                 <h2 class="section-title">Professional Certifications</h2>
@@ -185,7 +192,7 @@
     </footer>
 
     <script>
-        // Skills Data 
+        // Skills Data (Arranged Logically From Core Design to Execution)
         const skills = [
             { 
               title: "Enterprise Network Engineering", 
@@ -219,7 +226,7 @@
             }
         ];
 
-        // Experience Data 
+        // Experience Data (Updated LGU & 2GO Roles)
         const experience = [
             { 
               title: "IT Manager", 
@@ -249,13 +256,13 @@
               title: "IT QGIS Specialist", 
               company: "LGU Camalaniugan", 
               period: "August 2017 – October 2019", 
-              description: "Served as the core technical expert responsible for troubleshooting department-wide IT issues. Managed the localized Geographic Information Systems (GIS) mapping infrastructure and provided dedicated operational tech support." 
+              description: "Responsible for managing and updating the localized Geographic Information Systems (GIS) mapping infrastructure while simultaneously providing dedicated, department-wide IT hardware and technical support." 
             },
             { 
               title: "IT Support / Customer Service", 
               company: "2GO Express", 
               period: "January 2017 – July 2017", 
-              description: "Delivered essential technical support, hardware troubleshooting, and client-facing service resolution." 
+              description: "Managed client-facing system operations, securely executing real-time data entry updates and resolving core technical system software issues for shipping and delivery operations." 
             },
             { 
               title: "IT Technician", 
@@ -295,8 +302,7 @@
         const skillsContainer = document.getElementById('skills-container');
         skills.forEach((skill, index) => {
             const card = document.createElement('div');
-            card.className = 'custom-card rounded-xl p-6 opacity-0 animate-fadeInUp';
-            card.style.animationDelay = `${index * 60}ms`;
+            card.className = 'custom-card rounded-xl p-6';
             card.innerHTML = `
                 <div class="flex items-center gap-3 mb-4 border-b border-slate-800 pb-3">
                     <i data-lucide="${skill.icon}" class="w-5 h-5 text-amber-400"></i>
@@ -318,8 +324,7 @@
         const expContainer = document.getElementById('experience-container');
         experience.forEach((job, index) => {
             const card = document.createElement('div');
-            card.className = 'custom-card rounded-xl p-6 md:p-8 opacity-0 animate-fadeInUp';
-            card.style.animationDelay = `${index * 60}ms`;
+            card.className = 'custom-card rounded-xl p-6 md:p-8';
             card.innerHTML = `
                 <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2 gap-1">
                     <h3 class="text-lg font-bold text-white tracking-tight">${job.title}</h3>
@@ -345,7 +350,7 @@
                 </h3>
                 <div class="space-y-3">
                     ${section.items.map((cert, index) => `
-                        <div class="flex items-center justify-between py-2.5 border-b border-slate-900 last:border-b-0 opacity-0 animate-fadeInUp" style="animation-delay: ${index * 40}ms">
+                        <div class="flex items-center justify-between py-2.5 border-b border-slate-900 last:border-b-0">
                             <div class="flex items-center gap-3">
                                 <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 flex-shrink-0"></i>
                                 <span class="text-slate-300 font-medium text-sm md:text-base">${cert.name}</span>
@@ -373,6 +378,27 @@
                 navbar.classList.remove('bg-slate-950', 'shadow-xl', 'shadow-slate-950/20');
                 navbar.classList.add('bg-slate-950/80', 'backdrop-blur-md');
             }
+        });
+
+        // Scroll Reveal Animation Setup (Intersection Observer)
+        const sections = document.querySelectorAll('.reveal-on-scroll');
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Animate once
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
     </script>
 </body>
