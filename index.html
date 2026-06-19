@@ -1,305 +1,393 @@
-<!DOCTYPE html>
-<html lang="en">
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ChevronDown, ExternalLink, Award, Briefcase, BookOpen, Code2, Shield, Mail } from "lucide-react";
+import { useState, useEffect } from "react";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mark John Santos | IT Infrastructure Engineer</title>
+export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-        body {
-            background: #061a2e;
-            color: #dbeafe;
-            line-height: 1.6;
-        }
+  const skills = [
+    {
+      title: "Server & Network Administration",
+      items: [
+        "Windows Server 2019 Administration",
+        "Active Directory, DNS, DHCP, Group Policy",
+        "DFS & Domain Controller Management",
+      ],
+      icon: Code2,
+    },
+    {
+      title: "Network Infrastructure Management",
+      items: [
+        "Fortinet Firewalls & Security Policies",
+        "Ruijie Routers & Layer 2/3 Switching",
+        "VLAN, VPN, SD-WAN, Dual ISP Failover",
+      ],
+      icon: Shield,
+    },
+    {
+      title: "System Backup & DR",
+      items: [
+        "Backup & Recovery Systems",
+        "Secondary Server Management",
+        "Disaster Recovery Planning",
+      ],
+      icon: Briefcase,
+    },
+    {
+      title: "Email & Communication Systems",
+      items: [
+        "cPanel / Exabytes Email Management",
+        "Email Migration & Archiving",
+        "Microsoft Outlook Support",
+      ],
+      icon: Mail,
+    },
+    {
+      title: "Database & Applications",
+      items: [
+        "FinPower Connect Support",
+        "System Deployment & Maintenance",
+        "Data Integrity & Access Control",
+      ],
+      icon: Code2,
+    },
+    {
+      title: "Security & Compliance",
+      items: [
+        "Kaspersky Endpoint Security",
+        "MFA & VPN Security",
+        "Role-Based Access Control",
+      ],
+      icon: Shield,
+    },
+    {
+      title: "IT Helpdesk",
+      items: [
+        "PC Setup & Software Installation",
+        "User Onboarding",
+        "Printer & Device Support",
+      ],
+      icon: Briefcase,
+    },
+  ];
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 10%;
-            background: rgba(6, 26, 46, 0.92);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
-        }
+  const experience = [
+    {
+      title: "IT Manager",
+      company: "Kwik Moni Limited",
+      period: "July 2025 – Present",
+      description: "Leading IT infrastructure and operations for enterprise systems.",
+    },
+    {
+      title: "IT Officer",
+      company: "Kwik Moni Limited",
+      period: "September 2022 – July 2025",
+      description: "Managed enterprise IT systems, network infrastructure, and user support.",
+    },
+    {
+      title: "IT Freelancer",
+      company: "Self-Employed",
+      period: "2020 – March 2022",
+      description: "Provided IT consulting and infrastructure solutions to various clients.",
+    },
+    {
+      title: "CCNA Exam Preparation",
+      company: "Professional Development",
+      period: "October 2019 – January 2020",
+      description: "Intensive preparation for Cisco CCNA certification.",
+    },
+    {
+      title: "IT Specialist / QGIS",
+      company: "LGU Camalaniugan",
+      period: "August 2017 – October 2019",
+      description: "Managed IT infrastructure and GIS systems for local government.",
+    },
+    {
+      title: "IT Support / Customer Service",
+      company: "2GO Express",
+      period: "January 2017 – July 2017",
+      description: "Provided technical support and customer service.",
+    },
+    {
+      title: "IT Technician",
+      company: "R&J Enterprises",
+      period: "June 2016 – January 2017",
+      description: "Performed IT maintenance and technical support.",
+    },
+  ];
 
-        nav h1 {
-            color: #38bdf8;
-            font-size: 18px;
-        }
+  const certifications = [
+    {
+      category: "Professional Training",
+      items: [
+        { name: "CompTIA Security+", year: "September 2025" },
+        { name: "Microsoft Windows Server 2019 Administrator Automation using PowerShell", year: "July 2023" },
+        { name: "Microsoft Windows Server 2019 Administrator", year: "February 2022" },
+        { name: "Cisco CCNA Routing", year: "January 2020" },
+        { name: "CompTIA A+", year: "July 2019" },
+      ],
+    },
+    {
+      category: "Professional Development & Certifications",
+      items: [
+        { name: "Ruijie Certified Network Associate", year: "April 2025" },
+        { name: "Mikrotik Certified Network Associate", year: "June 2024" },
+        { name: "Fortinet Network Security Associate Level 2", year: "March 2023" },
+        { name: "Fortinet Network Security Associate Level 1", year: "March 2023" },
+        { name: "Fortinet Certified Fundamentals Cybersecurity", year: "March 2023" },
+        { name: "Fundamentals System Troubleshooting", year: "July 2018" },
+        { name: "Migrating from Windows XP to Windows 8.1", year: "November 2014" },
+      ],
+    },
+  ];
 
-        nav a {
-            color: #dbeafe;
-            margin-left: 18px;
-            text-decoration: none;
-            font-size: 14px;
-        }
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* Navigation */}
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-slate-900/95 backdrop-blur-md border-b border-slate-700"
+            : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663771683483/SZQwGnovpNkkum4tJhn7zD/logo-mark-Zi49Zt3ASxEtV4E4tXRJWc.webp"
+              alt="Mark Santos Logo"
+              className="w-8 h-8"
+            />
+            <span className="text-white font-bold text-lg">Mark J.</span>
+          </div>
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+          <div className="hidden md:flex gap-8">
+            <a href="#about" className="nav-link">
+              About
+            </a>
+            <a href="#skills" className="nav-link">
+              Skills
+            </a>
+            <a href="#experience" className="nav-link">
+              Experience
+            </a>
+            <a href="#certifications" className="nav-link">
+              Certifications
+            </a>
+          </div>
 
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
-        }
-
-        .hero h2 {
-            color: #38bdf8;
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            color: #fff;
-            margin: 10px 0;
-        }
-
-        .hero p {
-            color: #93c5fd;
-            max-width: 900px;
-        }
-
-        section {
-            padding: 90px 10%;
-        }
-
-        .title {
-            color: #38bdf8;
-            font-size: 26px;
-            margin-bottom: 20px;
-        }
-
-        .card,
-        .skill-card {
-            background: #0b2a4a;
-            padding: 18px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        ul {
-            margin-left: 18px;
-            color: #cbd5e1;
-            font-size: 14px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            border-top: 1px solid rgba(56, 189, 248, 0.2);
-            color: #93c5fd;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- NAV -->
-    <nav>
-        <h1>Mark J.</h1>
-        <div>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#training">Training</a>
-            <a href="#experience">Experience</a>
+          <Button
+            variant="outline"
+            size="sm"
+            className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900"
+          >
+            Contact
+          </Button>
         </div>
-    </nav>
+      </nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h2>IT Infrastructure Engineer</h2>
-        <h1>Mark John Santos</h1>
-        <p>
-            IT Infrastructure Engineer specializing in enterprise IT systems, network infrastructure,
-            server administration, cybersecurity, and business IT solutions including PBX, CCTV,
-            biometrics, and enterprise connectivity systems.
-        </p>
-    </section>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        {/* Background Gradient */}
+        <div
+          className="absolute inset-0 z-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+        >
+        </div>
 
-    <!-- ABOUT -->
-    <section id="about">
-        <h2 class="title">Professional Profile</h2>
-        <p>
-            Experienced IT Infrastructure Engineer with expertise in enterprise environments,
-            server management, network engineering, IT security, and business system integration.
-            Strong background in IT support, infrastructure deployment, and enterprise operations.
-        </p>
-    </section>
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="animate-fadeInUp">
+            <Badge className="mb-6 bg-amber-400 text-slate-900 px-4 py-2 text-sm font-semibold">
+              IT Infrastructure Engineer
+            </Badge>
 
-    <!-- EDUCATION -->
-    <section id="education">
-        <h2 class="title">Educational Attainment</h2>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Mark John Santos
+            </h1>
 
-        <div class="card">
-            <p>
-                Bachelor of Science in Computer Engineering<br>
-                AMA Computer College – Tuguegarao<br>
-                Tuguegarao City, Philippines<br>
-                (2010–2016)
+            <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Enterprise IT Infrastructure Specialist with expertise in network administration, server
+              management, cybersecurity, and business system integration. Trusted partner for building
+              reliable, scalable infrastructure solutions.
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-amber-400 text-slate-900 hover:bg-amber-500">
+                View My Work
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900"
+              >
+                Get In Touch
+              </Button>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ChevronDown className="w-6 h-6 text-amber-400" />
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2 class="title">Technical Expertise</h2>
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="section-title">Professional Profile</h2>
 
-        <div class="skill-grid">
-
-            <div class="skill-card">
-                <h3>Server & Network Administration</h3>
-                <ul>
-                    <li>Windows Server 2019 Administration</li>
-                    <li>Active Directory, DNS, DHCP, Group Policy</li>
-                    <li>DFS & Domain Controller Management</li>
-                </ul>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <p className="text-slate-300 leading-relaxed">
+                Experienced IT Infrastructure Engineer with a proven track record of designing,
+                implementing, and maintaining enterprise-level IT systems. Specialized in network
+                infrastructure, server administration, and business system integration.
+              </p>
+              <p className="text-slate-300 leading-relaxed">
+                Strong background in IT support, infrastructure deployment, and enterprise operations.
+                Committed to delivering reliable, secure, and scalable solutions that drive business
+                success.
+              </p>
             </div>
 
-            <div class="skill-card">
-                <h3>Network Infrastructure Management</h3>
-                <ul>
-                    <li>Fortinet Firewalls & Security Policies</li>
-                    <li>Ruijie Routers & Layer 2/3 Switching</li>
-                    <li>VLAN, VPN, SD-WAN, Dual ISP Failover</li>
-                </ul>
+            <div className="space-y-4">
+              <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg p-6 border border-slate-600">
+                <h3 className="text-amber-400 font-semibold mb-4 flex items-center gap-2">
+                  <Award className="w-5 h-5" />
+                  Education
+                </h3>
+                <p className="text-slate-300 font-medium">Bachelor of Science in Computer Engineering</p>
+                <p className="text-slate-400 text-sm">AMA Computer College – Tuguegarao</p>
+                <p className="text-slate-400 text-sm">2010–2016</p>
+              </div>
             </div>
-
-            <div class="skill-card">
-                <h3>System Backup & DR</h3>
-                <ul>
-                    <li>Backup & Recovery Systems</li>
-                    <li>Secondary Server Management</li>
-                    <li>Disaster Recovery Planning</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Email & Communication Systems</h3>
-                <ul>
-                    <li>cPanel / Exabytes Email Management</li>
-                    <li>Email Migration & Archiving</li>
-                    <li>Microsoft Outlook Support</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Database & Applications</h3>
-                <ul>
-                    <li>FinPower Connect Support</li>
-                    <li>System Deployment & Maintenance</li>
-                    <li>Data Integrity & Access Control</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>Security & Compliance</h3>
-                <ul>
-                    <li>Kaspersky Endpoint Security</li>
-                    <li>MFA & VPN Security</li>
-                    <li>Role-Based Access Control</li>
-                </ul>
-            </div>
-
-            <div class="skill-card">
-                <h3>IT Helpdesk</h3>
-                <ul>
-                    <li>PC Setup & Software Installation</li>
-                    <li>User Onboarding</li>
-                    <li>Printer & Device Support</li>
-                </ul>
-            </div>
-
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- TRAINING -->
-    <section id="training">
-        <h2 class="title">Professional Trainings & Certification Exam</h2>
+      {/* Skills Section */}
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="section-title">Technical Expertise</h2>
 
-        <div class="card">
-            <ul>
-                <li>CompTIA Security+ - 2025</li>
-                <li>Microsoft Windows Server 2019 Administrator Automation using PowerShell - 2023</li>
-                <li>Microsoft Windows Server 2019 Administrator - 2022</li>
-                <li>Cisco CCNA Routing - 2020</li>
-                <li>CompTIA A+ - 2019</li>
-            </ul>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={index}
+                  className="skill-card animate-fadeInUp"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <Icon className="w-6 h-6 text-amber-400" />
+                    <h3>{skill.title}</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {skill.items.map((item, i) => (
+                      <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                        <span className="text-amber-400 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <h2 class="title">Work Experience</h2>
+      {/* Experience Section */}
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="section-title">Work Experience</h2>
 
-        <div class="card">
-            <h3>IT Manager - Kwik Moni Limited</h3>
-            <p>July 2025 – Present</p>
+          <div className="space-y-6">
+            {experience.map((job, index) => (
+              <div
+                key={index}
+                className="experience-card animate-fadeInUp"
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                  <h3 className="text-xl font-semibold text-white">{job.title}</h3>
+                  <span className="text-amber-400 text-sm font-medium">{job.period}</span>
+                </div>
+                <p className="text-slate-400 font-medium mb-3">{job.company}</p>
+                <p className="text-slate-300">{job.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-            <h3>IT Officer - Kwik Moni Limited</h3>
-            <p>September 2022 – July 2025</p>
+      {/* Certifications Section */}
+      <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="section-title">Professional Certifications</h2>
+
+          <div className="space-y-8">
+            {certifications.map((section, sectionIndex) => (
+              <div key={sectionIndex} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-8 border border-slate-700">
+                <h3 className="text-xl font-bold text-amber-400 mb-6 flex items-center gap-2">
+                  <Award className="w-6 h-6" />
+                  {section.category}
+                </h3>
+                <div className="space-y-4">
+                  {section.items.map((cert, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between pb-4 border-b border-slate-700 last:border-b-0 animate-fadeInUp"
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <div className="flex items-center gap-3">
+                        <Award className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                        <span className="text-slate-300 font-medium">{cert.name}</span>
+                      </div>
+                      <Badge variant="secondary" className="bg-amber-400/20 text-amber-300">
+                        {cert.year}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-            <h3>IT Freelancer</h3>
-            <p>2020 – March 2022</p>
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-slate-800 border-t border-slate-700">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Discuss Your Infrastructure Needs?</h2>
+          <p className="text-slate-300 mb-8 text-lg">
+            Let's talk about how I can help build reliable, scalable IT solutions for your organization.
+          </p>
+          <Button size="lg" className="bg-amber-400 text-slate-900 hover:bg-amber-500">
+            Get In Touch <ExternalLink className="w-4 h-4 ml-2" />
+          </Button>
         </div>
+      </section>
 
-        <div class="card">
-            <h3>CCNA Exam Preparation</h3>
-            <p>October 2019 – January 2020</p>
+      {/* Footer */}
+      <footer className="bg-slate-900 border-t border-slate-700 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto text-center text-slate-400">
+          <p>© 2026 Mark John Santos | IT Infrastructure Engineer</p>
+          <p className="text-sm mt-2">Designed with precision. Built for excellence.</p>
         </div>
-
-        <div class="card">
-            <h3>IT Specialist / QGIS - LGU Camalaniugan</h3>
-            <p>August 2017 – October 2019</p>
-        </div>
-
-        <div class="card">
-            <h3>IT Support / Customer Service - 2GO Express</h3>
-            <p>January 2017 – July 2017</p>
-        </div>
-
-        <div class="card">
-            <h3>IT Technician - R&J Enterprises</h3>
-            <p>June 2016 – January 2017</p>
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2026 Mark John Santos | IT Infrastructure Engineer
-    </footer>
-
-</body>
-
-</html>
+      </footer>
+    </div>
+  );
+}
